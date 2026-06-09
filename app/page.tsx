@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <>
-      <main className="mt-32">
+      <main>
         <HeroSection />
         <hr className="border-t border-primary w-full" />
         <AboutSection about={homepageContent.about} />

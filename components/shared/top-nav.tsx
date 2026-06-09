@@ -21,7 +21,7 @@ export function TopNav() {
   return (
     <header className="top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
       <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-max-width mx-auto">
-        <Link href="/" className="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary">
+        <Link href="/" className="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary">
           {homepageContent.brand}
         </Link>
 
@@ -39,6 +39,8 @@ export function TopNav() {
           <a
             href={homepageContent.navCta.href}
             className="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {NAV_CTA_LABEL}
           </a>
@@ -65,6 +67,8 @@ export function TopNav() {
             href={homepageContent.navCta.href}
             className="mt-2 bg-primary text-on-primary px-6 py-3 font-label-bold text-label-bold uppercase tracking-widest text-center"
             onClick={() => setOpen(false)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {NAV_CTA_LABEL}
           </a>

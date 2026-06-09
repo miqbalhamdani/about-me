@@ -18,6 +18,8 @@ export function SiteFooter() {
               key={link.label}
               className="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200"
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {link.label}
             </a>

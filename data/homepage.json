@@ -1,72 +1,115 @@
 {
   "brand": "IQBAL HAMDANI",
   "navCta": {
-    "href": "#"
+    "href": "/resume-iqbal-hamdani.pdf"
   },
   "hero": {
-    "h1": ["IQBAL", "HAMDANI"],
-    "h2": ["SENIOR", "FRONTEND", "ENGINEER."],
+    "h1": [
+      "IQBAL",
+      "HAMDANI"
+    ],
+    "h2": [
+      "SENIOR",
+      "FRONTEND",
+      "ENGINEER."
+    ],
     "contact": {
-      "href": "#contact"
+      "href": "https://wa.me/6282145551404?text=Hi%20Iqbal%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
     }
   },
   "about": {
     "heading": "About",
-    "description": "I am a product-minded engineer dedicated to the craft of building software that feels as good as it looks. My approach combines deep technical rigor with a relentless focus on user experience.",
+    "description": "Senior Frontend Engineer with 9+ years of experience building scalable SaaS and enterprise products using Vue, Nuxt, React, and TypeScript. Passionate about frontend architecture, performance, and great user experiences.",
     "highlights": [
-      { "value": "12+ Years", "label": "Professional Experience" },
-      { "value": "Staff Engineer", "label": "Current Seniority" },
-      { "value": "San Francisco", "label": "Current Location" }
+      {
+        "value": "9+ Years",
+        "label": "Frontend Experience"
+      },
+      {
+        "value": "Vue • Nuxt • React",
+        "label": "Core Expertise"
+      },
+      {
+        "value": "Open to Work",
+        "label": "Availability"
+      }
     ]
   },
   "techStackRows": [
     {
       "category": "Frontend",
-      "items": ["React.js", "TypeScript", "Next.js", "Tailwind CSS", "WebGPU"]
+      "items": [
+        "Vue 3",
+        "Nuxt 3",
+        "React",
+        "Next.js",
+        "HTML5 & CSS3",
+        "TypeScript",
+        "Tailwind CSS"
+      ]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "GoLang", "GraphQL", "Python"]
+      "items": [
+        "Express.js",
+        "Laravel",
+        "GraphQL"
+      ]
     },
     {
-      "category": "Database",
-      "items": ["PostgreSQL", "Redis", "Prisma"]
-    },
-    {
-      "category": "Cloud & Tools",
-      "items": ["AWS", "Docker", "Terraform", "Kubernetes"]
+      "category": "Tools & Cloud",
+      "items": [
+        "Git",
+        "Vite",
+        "Webpack",
+        "Jest"
+      ]
     }
   ],
   "experiences": [
     {
-      "company": "Stripe",
-      "role": "Staff Software Engineer",
-      "period": "2021 - PRESENT"
+      "company": "Koltiva",
+      "role": "Engineering Manager (Hands-on Frontend)",
+      "period": "2023 - Present",
+      "description": "Leading frontend initiatives while managing engineering teams. Built EUDR compliance workflows, integrated with EU Information System (EUIS), implemented shared authentication across internal applications, and collaborated directly with European stakeholders on product direction and technical execution."
     },
     {
-      "company": "Vercel",
-      "role": "Senior Product Engineer",
-      "period": "2018 - 2021"
+      "company": "Mister Aladin",
+      "role": "Frontend Engineer -> Frontend Lead",
+      "period": "2018 - 2023",
+      "description": "Led frontend architecture and technical direction across hotel, flight, train, and activity booking products. Migrated legacy Laravel applications to Nuxt SSR, improved checkout performance by 67%, and delivered bundled travel booking experiences."
     },
     {
-      "company": "Airbnb",
-      "role": "Software Engineer II",
-      "period": "2015 - 2018"
-    },
-    {
-      "company": "Intercom",
-      "role": "Junior Full Stack Developer",
-      "period": "2012 - 2015"
+      "company": "Mimopay",
+      "role": "Frontend Engineer",
+      "period": "2017 - 2018",
+      "description": "Built and scaled travel booking platforms, contributed to design system adoption, search optimization, and frontend modernization initiatives across multiple business verticals."
     }
   ],
-  "portfolioOrder": ["neural-sync-interface", "vanguard-identity"],
+  "portfolioOrder": [
+    "eudr-compliance-platform",
+    "travel-booking-platform",
+    "design-system",
+    "sso-platform"
+  ],
   "footer": {
     "links": [
-      { "href": "mailto:hello@example.com", "label": "Email" },
-      { "href": "#", "label": "Phone" },
-      { "href": "#", "label": "LinkedIn" },
-      { "href": "#", "label": "GitHub" },
-      { "href": "#", "label": "Blog" }
+      {
+        "href": "mailto:iqbalhamdani27@gmail.com",
+        "label": "Email"
+      },
+      {
+        "href": "https://wa.me/6282145551404?text=Hi%20Iqbal%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect.",
+        "label": "Whatsapp"
+      },
+      {
+        "href": "https://linkedin.com/in/iqbalhamdani",
+        "label": "LinkedIn"
+      },
+      {
+        "href": "https://github.com/miqbalhamdani",
+        "label": "GitHub"
+      }
     ]
   }
 }
