@@ -1,11 +1,15 @@
-import { techStackRows } from "@/components/home/home-data";
+import type { TechStackRow } from "@/lib/content-types";
 
-export function TechStackSection() {
+type TechStackSectionProps = {
+  rows: TechStackRow[];
+};
+
+export function TechStackSection({ rows }: TechStackSectionProps) {
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto" id="stack">
       <h2 className="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Tech Stack</h2>
       <div className="space-y-16">
-        {techStackRows.map((row) => (
+        {rows.map((row) => (
           <div key={row.category} className="flex flex-col md:flex-row md:items-center border-b border-outline-variant pb-8">
             <div className="w-full md:w-1/4 mb-4 md:mb-0">
               <span className="font-label-bold text-label-bold uppercase tracking-widest text-secondary">

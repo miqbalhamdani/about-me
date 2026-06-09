@@ -1,9 +1,11 @@
 type ProjectAboutSidebarProps = {
   about: string[];
   stack: string[];
+  demoUrl: string;
+  repoUrl: string;
 };
 
-export function ProjectAboutSidebar({ about, stack }: ProjectAboutSidebarProps) {
+export function ProjectAboutSidebar({ about, stack, demoUrl, repoUrl }: ProjectAboutSidebarProps) {
   return (
     <section className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -22,13 +24,13 @@ export function ProjectAboutSidebar({ about, stack }: ProjectAboutSidebarProps) 
           <div className="flex flex-col gap-4 mb-4">
             <a
               className="w-full bg-primary text-on-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
-              href="#"
+              href={demoUrl}
             >
               View Demo
             </a>
             <a
               className="w-full border border-primary text-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-container transition-colors duration-300"
-              href="#"
+              href={repoUrl}
             >
               GitHub
             </a>

@@ -1,4 +1,4 @@
-import type { UserFlowStep } from "@/components/project/project-data";
+import type { UserFlowStep } from "@/lib/content-types";
 
 type ProjectUserFlowProps = {
   userFlow: UserFlowStep[];

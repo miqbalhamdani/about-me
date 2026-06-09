@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { portfolioProjects } from "@/components/home/home-data";
+import type { ProjectSummary } from "@/lib/content-types";
 
-export function PortfolioSection() {
+type PortfolioSectionProps = {
+  projects: ProjectSummary[];
+};
+
+export function PortfolioSection({ projects }: PortfolioSectionProps) {
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto" id="portfolio">
       <h2 className="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Selected Work</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {portfolioProjects.map((project) => (
+        {projects.map((project) => (
           <article key={project.slug} className="group">
             <div className="aspect-video bg-surface-container-highest mb-8 overflow-hidden">
               <img

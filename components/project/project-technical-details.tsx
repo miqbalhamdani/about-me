@@ -1,4 +1,4 @@
-import type { TextBlock } from "@/components/project/project-data";
+import type { TextBlock } from "@/lib/content-types";
 
 type ProjectTechnicalDetailsProps = {
   decisions: TextBlock[];

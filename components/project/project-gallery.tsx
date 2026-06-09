@@ -1,10 +1,12 @@
-import type { GalleryImage } from "@/components/project/project-data";
+import type { GalleryImage } from "@/lib/content-types";
 
 type ProjectGalleryProps = {
   galleryImages: GalleryImage[];
 };
 
 export function ProjectGallery({ galleryImages }: ProjectGalleryProps) {
+  const featuredWideImage = galleryImages[2];
+
   return (
     <section className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
       <div className="flex flex-col gap-element-gap">
@@ -19,13 +21,15 @@ export function ProjectGallery({ galleryImages }: ProjectGalleryProps) {
             </div>
           ))}
         </div>
-        <div className="aspect-[21/9] bg-surface-container overflow-hidden border border-outline-variant">
-          <img
-            alt={galleryImages[2]?.alt ?? "Project Gallery"}
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-            src={galleryImages[2]?.src}
-          />
-        </div>
+        {featuredWideImage ? (
+          <div className="aspect-[21/9] bg-surface-container overflow-hidden border border-outline-variant">
+            <img
+              alt={featuredWideImage.alt}
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              src={featuredWideImage.src}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

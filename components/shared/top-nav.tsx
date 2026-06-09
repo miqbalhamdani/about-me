@@ -3,20 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { MaterialIcon } from "@/components/shared/material-icon";
-
-type NavItem = {
-  href: string;
-  label: string;
-};
-
-const defaultNavItems: NavItem[] = [
-  { href: "/#about", label: "About" },
-  { href: "/#stack", label: "Tech Stack" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#portfolio", label: "Portfolio" },
-];
-
-const defaultCta = { href: "#", label: "Download CV" };
+import { homepageContent } from "@/lib/site-content";
 
 export function TopNav() {
   const [open, setOpen] = useState(false);
@@ -29,7 +16,7 @@ export function TopNav() {
         </Link>
 
         <div className="hidden md:flex gap-8 items-center">
-          {defaultNavItems.map((item) => (
+          {homepageContent.navItems.map((item) => (
             <a
               key={item.label}
               className="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200"
@@ -40,10 +27,10 @@ export function TopNav() {
           ))}
 
           <a
-            href={defaultCta.href}
+            href={homepageContent.navCta.href}
             className="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
           >
-            {defaultCta.label}
+            {homepageContent.navCta.label}
           </a>
         </div>
 
@@ -54,7 +41,7 @@ export function TopNav() {
 
       {open ? (
         <div className="md:hidden border-t border-outline-variant px-margin-mobile pb-6 flex flex-col gap-4 bg-surface-container-lowest">
-          {defaultNavItems.map((item) => (
+          {homepageContent.navItems.map((item) => (
             <a
               key={`mobile-${item.label}`}
               className="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200"
@@ -65,11 +52,11 @@ export function TopNav() {
             </a>
           ))}
           <a
-            href={defaultCta.href}
+            href={homepageContent.navCta.href}
             className="mt-2 bg-primary text-on-primary px-6 py-3 font-label-bold text-label-bold uppercase tracking-widest text-center"
             onClick={() => setOpen(false)}
           >
-            {defaultCta.label}
+            {homepageContent.navCta.label}
           </a>
         </div>
       ) : null}

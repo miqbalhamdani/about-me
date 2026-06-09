@@ -1,6 +1,10 @@
-import { experiences } from "@/components/home/home-data";
+import type { Experience } from "@/lib/content-types";
 
-export function ExperienceSection() {
+type ExperienceSectionProps = {
+  experiences: Experience[];
+};
+
+export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto" id="experience">
       <h2 className="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Experience</h2>

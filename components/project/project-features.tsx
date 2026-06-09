@@ -1,4 +1,4 @@
-import type { FeatureCard } from "@/components/project/project-data";
+import type { FeatureCard } from "@/lib/content-types";
 import { MaterialIcon } from "@/components/shared/material-icon";
 
 type ProjectFeaturesProps = {
