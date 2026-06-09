@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio | Professional Excellence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#e1dfdf",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-background": "#1a1c1c",
+                    "primary-fixed": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-container": "#848484",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-secondary-container": "#626262",
+                    "secondary": "#5e5e5e",
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "primary": "#000000",
+                    "inverse-primary": "#c6c6c6",
+                    "inverse-surface": "#2f3131",
+                    "primary-container": "#1b1b1b",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#5e5e5e",
+                    "surface-container-low": "#f3f3f4",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#838484",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#464747",
+                    "tertiary": "#000000",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "tertiary-container": "#1a1c1c",
+                    "surface-variant": "#e2e2e2",
+                    "surface-dim": "#dadada",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface": "#f9f9f9",
+                    "on-surface-variant": "#4c4546",
+                    "on-primary-fixed": "#1b1b1b",
+                    "outline": "#7e7576"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "element-gap": "32px",
+                    "section-gap": "120px",
+                    "max-width": "1200px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-max-width mx-auto">
+<span class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary">PORTFOLIO</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#about">About</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#stack">Tech Stack</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#experience">Experience</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#portfolio">Portfolio</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center w-full">
+<div class="flex flex-col">
+<h1 class="font-display-xl text-[80px] md:text-[120px] leading-[0.9] tracking-tighter uppercase font-bold text-primary">
+                ALEX<br/>RIVERS.
+            </h1>
+</div>
+<div class="flex flex-col items-start gap-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg leading-tight uppercase tracking-tighter text-primary">
+                SENIOR<br/>PRODUCT<br/>ENGINEER.
+            </h2>
+<div class="flex flex-col sm:flex-row gap-8 items-start sm:items-center">
+<a class="bg-primary text-on-primary px-10 py-5 font-label-bold text-label-bold uppercase tracking-widest hover:opacity-80 transition-opacity duration-150" href="#portfolio">
+                    View Portfolio
+                </a>
+<a class="text-primary font-label-bold text-label-bold uppercase tracking-widest hover:underline transition-all duration-200" href="#contact">
+                    Contact Me
+                </a>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-t border-primary w-full"/>
+<!-- About Me Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-width mx-auto" id="about"><h2 class="font-headline-lg text-headline-lg mb-12 uppercase tracking-tighter">About</h2><div class="mb-16"><p class="font-display-xl text-[40px] md:text-[56px] leading-tight tracking-tight max-w-4xl">I am a product-minded engineer dedicated to the craft of building software that feels as good as it looks. My approach combines deep technical rigor with a relentless focus on user experience.</p></div><div class="flex flex-col md:flex-row justify-between gap-12 border-t border-outline-variant pt-12"><div class="flex flex-col gap-2"><span class="font-headline-lg text-[32px] font-bold leading-none">12+ Years</span><span class="font-label-sm text-secondary uppercase tracking-widest">Professional Experience</span></div><div class="flex flex-col gap-2"><span class="font-headline-lg text-[32px] font-bold leading-none">Staff Engineer</span><span class="font-label-sm text-secondary uppercase tracking-widest">Current Seniority</span></div><div class="flex flex-col gap-2"><span class="font-headline-lg text-[32px] font-bold leading-none">Architecture</span><span class="font-label-sm text-secondary uppercase tracking-widest">Core Expertise</span></div><div class="flex flex-col gap-2"><span class="font-headline-lg text-[32px] font-bold leading-none">San Francisco</span><span class="font-label-sm text-secondary uppercase tracking-widest">Current Location</span></div></div></section>
+<!-- Tech Stack Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-width mx-auto" id="stack">
+<h2 class="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Tech Stack</h2>
+<div class="space-y-16">
+<!-- Row -->
+<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant pb-8">
+<div class="w-full md:w-1/4 mb-4 md:mb-0">
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary">Frontend</span>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-3/4">
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">React.js</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">TypeScript</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Next.js</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Tailwind CSS</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">WebGPU</span>
+</div>
+</div>
+<!-- Row -->
+<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant pb-8">
+<div class="w-full md:w-1/4 mb-4 md:mb-0">
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary">Backend</span>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-3/4">
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Node.js</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">GoLang</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">GraphQL</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Python</span>
+</div>
+</div>
+<!-- Row -->
+<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant pb-8">
+<div class="w-full md:w-1/4 mb-4 md:mb-0">
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary">Database</span>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-3/4">
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">PostgreSQL</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Redis</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Prisma</span>
+</div>
+</div>
+<!-- Row -->
+<div class="flex flex-col md:flex-row md:items-center border-b border-outline-variant pb-8">
+<div class="w-full md:w-1/4 mb-4 md:mb-0">
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary">Cloud &amp; Tools</span>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-3/4">
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">AWS</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Docker</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Terraform</span>
+<span class="bg-primary text-on-primary px-4 py-1 font-label-bold text-label-sm uppercase">Kubernetes</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-width mx-auto" id="experience">
+<h2 class="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Experience</h2>
+<div class="space-y-0">
+<div class="group flex flex-col md:flex-row justify-between py-12 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="flex flex-col">
+<span class="font-headline-lg text-[24px] font-bold group-hover:translate-x-2 transition-transform duration-300">Stripe</span>
+<span class="font-body-md text-secondary">Staff Software Engineer</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary mt-4 md:mt-0">2021 — PRESENT</span>
+</div>
+<div class="group flex flex-col md:flex-row justify-between py-12 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="flex flex-col">
+<span class="font-headline-lg text-[24px] font-bold group-hover:translate-x-2 transition-transform duration-300">Vercel</span>
+<span class="font-body-md text-secondary">Senior Product Engineer</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary mt-4 md:mt-0">2018 — 2021</span>
+</div>
+<div class="group flex flex-col md:flex-row justify-between py-12 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="flex flex-col">
+<span class="font-headline-lg text-[24px] font-bold group-hover:translate-x-2 transition-transform duration-300">Airbnb</span>
+<span class="font-body-md text-secondary">Software Engineer II</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary mt-4 md:mt-0">2015 — 2018</span>
+</div>
+<div class="group flex flex-col md:flex-row justify-between py-12 border-b border-outline-variant hover:bg-surface-container-low transition-colors px-4 -mx-4">
+<div class="flex flex-col">
+<span class="font-headline-lg text-[24px] font-bold group-hover:translate-x-2 transition-transform duration-300">Intercom</span>
+<span class="font-body-md text-secondary">Junior Full Stack Developer</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-secondary mt-4 md:mt-0">2012 — 2015</span>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-width mx-auto" id="portfolio">
+<h2 class="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Selected Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Card 1 -->
+<div class="group">
+<div class="aspect-video bg-surface-container-highest mb-8 overflow-hidden">
+<img alt="Nexus Dashboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A clean, minimalist high-fidelity render of a futuristic dashboard interface on a professional monitor. The UI features crisp white lines and typography against a deep black background, with subtle glowing blue accents. The setting is a darkened, modern home office with soft ambient lighting and premium peripherals. The overall mood is sophisticated, technical, and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWa1TxYRSPcki7t69z6RiqTm-XbPgbA5lYyVRKFeyayJEvVPEJHrKBdP7OM-UMGHtZtTUSC7Q0wHbqOc40WHyj9GhmQ_ZGmWIyPU121tZJmeBpRabhme9GWiVaG51rB2GZZbGE208wlL12yKZxS2nvWHXSAv4OhGf7wOHDajSOZ5xSxN_ZxwqGWDe6df2-gl46oa4eLBgOz8XPXG9jo3lj7WSeKcZ3Xk3aD0XuIWEWOmRFpq2tAG5ahwR9JDDPaFNFKoZUhQcvbK0V"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">React</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">WebGPU</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">Node</span>
+</div>
+<h3 class="font-headline-lg text-[28px] mb-2">Nexus Analytics Platform</h3>
+<p class="font-body-md text-secondary mb-6">A real-time data visualization engine processing billions of events daily with sub-millisecond latency.</p>
+<button class="border border-primary px-6 py-3 font-label-bold text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">View Detail</button>
+</div>
+<!-- Card 2 -->
+<div class="group">
+<div class="aspect-video bg-surface-container-highest mb-8 overflow-hidden">
+<img alt="Vanguard App" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A professional architectural photograph of a sleek, white tech-branded office lobby with large glass windows and minimalist furniture. The lighting is bright and airy, emphasizing a high-contrast black and white aesthetic. Modern abstract art pieces hang on the walls, and the floor is a polished dark concrete. The atmosphere conveys premium quality, transparency, and innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp5x-eD4haEU2vKqH5IlaYe0guSI27Jc7kktmpdFG1LQkmXumAvluBq8KWl82hVBre8JmgjJH2yx5z9pOc14bK5Vp1kJkZm6fAibAZ5XiKFGk3Md6EG6Kq1HV12kpxN02DPAyGf9_iBw5zd2EBxjuSY6-ezdc3HCMLs8bu0svmkOkRDT-w_pYYQhuiVLA2qZuAqs8HoffJiZRUrTzXMl3F1PYDLXGzpvdQZdYT_uQY6-_rxWsQ3x__NLMDfGEUMyyq92wg8OB6vkWt"/>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">Next.js</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">Postgres</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label-bold text-[10px] uppercase">Tailwind</span>
+</div>
+<h3 class="font-headline-lg text-[28px] mb-2">Vanguard Identity</h3>
+<p class="font-body-md text-secondary mb-6">Redefining digital security with a zero-trust authentication framework designed for enterprise scale.</p>
+<button class="border border-primary px-6 py-3 font-label-bold text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">View Detail</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant" id="contact">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-section-gap max-w-max-width mx-auto gap-8">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">PORTFOLIO</span>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">© 2024 PORTFOLIO. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="mailto:hello@example.com">Email</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Phone</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Blog</a>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover animation for list items
+        const listItems = document.querySelectorAll('#experience .group');
+        listItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = 'rgba(0,0,0,0.02)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body></html>

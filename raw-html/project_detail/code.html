@@ -1,0 +1,328 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Portfolio - Project Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#e1dfdf",
+                      "surface-bright": "#f9f9f9",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-background": "#1a1c1c",
+                      "primary-fixed": "#e2e2e2",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#eeeeee",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#cfc4c5",
+                      "on-primary-container": "#848484",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#e4e2e2",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#1a1c1c",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-secondary-container": "#626262",
+                      "secondary": "#5e5e5e",
+                      "tertiary-fixed": "#e2e2e2",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "primary": "#000000",
+                      "inverse-primary": "#c6c6c6",
+                      "inverse-surface": "#2f3131",
+                      "primary-container": "#1b1b1b",
+                      "background": "#f9f9f9",
+                      "surface-tint": "#5e5e5e",
+                      "surface-container-low": "#f3f3f4",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#838484",
+                      "surface-container-high": "#e8e8e8",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#464747",
+                      "tertiary": "#000000",
+                      "surface-container-highest": "#e2e2e2",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "tertiary-container": "#1a1c1c",
+                      "surface-variant": "#e2e2e2",
+                      "surface-dim": "#dadada",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface": "#f9f9f9",
+                      "on-surface-variant": "#4c4546",
+                      "on-primary-fixed": "#1b1b1b",
+                      "outline": "#7e7576"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "element-gap": "32px",
+                      "section-gap": "120px",
+                      "max-width": "1200px",
+                      "margin-desktop": "80px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "label-bold": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-xl-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1a1c1c;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-max-width mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary">PORTFOLIO</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Tech Stack</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Experience</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Contact</a>
+<a href="#" class="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300">Download CV</a></div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="mt-32">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<div class="flex flex-col gap-6">
+<a class="flex items-center gap-2 font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+                    Back to Portfolio
+                </a>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary max-w-4xl">NEURAL SYNC INTERFACE</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mt-4">
+                    A distributed ecosystem for real-time cognitive synchronization and collaborative data architecture.
+                </p>
+</div>
+</section>
+<!-- Main Hero Image -->
+<section class="w-full mb-section-gap bg-surface-container-low overflow-hidden">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<div class="aspect-[16/9] bg-surface-container border border-outline-variant relative group overflow-hidden">
+<img alt="Project Overview" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" data-alt="A clean and professional software dashboard interface displayed on a high-resolution widescreen monitor. The UI features minimalist charts, dark mode aesthetic, and sleek data visualizations in a high-key lighting environment. The background is a stark, white minimalist workspace with soft shadows, emphasizing a premium and intellectual design philosophy. The overall mood is sophisticated, modern, and highly focused on technical clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9OPh8Q5Z4NonzxI8QEOayvmDawlb7JTeLPBvT8s9cxhIOzyCWDcCfR7rDIo5zb4JNfqyQqM35TT3lqklEnv0cVfE2TOXhA55YTJ-84s_7W-UpS7I6_Snyto29c_9zsKlXACqepWHf9uWqcUBRU-pFYrcb-GQy3NnmrY8wFCp-9n1xozYOQ78vSHI8r8HIVDsruTNF2-e0flkT06XugyTpiHg3oMUZ-XgmNLM3WHGJghD-NEqhR9bznnjqLi-kOGaqDTJnbkhBrIMg">
+</div>
+</div>
+</section>
+<!-- Project Description & Tech Stack -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- About Section -->
+<div class="md:col-span-8 flex flex-col gap-element-gap">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">About the App</h2>
+<div class="flex flex-col gap-6 text-secondary font-body-md text-body-md">
+<p class="">
+                            Neural Sync Interface was developed as a solution for high-frequency data environments where cognitive load management is critical. By utilizing advanced heuristics, the platform prioritizes information flows based on user behavior and current operational contexts.
+                        </p>
+<p class="">
+                            The core philosophy was to create an invisible UI—one that recedes into the background until specifically required by the user. This approach ensures that the content remains the primary focus, supported by a framework of uncompromising reliability and speed.
+                        </p>
+</div>
+</div>
+<!-- Sidebar Info -->
+<div class="md:col-span-4 flex flex-col gap-element-gap"><div class="flex flex-col gap-4 mb-4">
+<a class="w-full bg-primary text-on-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300" href="#">
+        View Demo
+    </a>
+<a class="w-full border border-primary text-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-container transition-colors duration-300" href="#">
+        GitHub
+    </a>
+</div>
+<div>
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest text-primary mb-4">Tech Stack</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">React</span>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">TypeScript</span>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">Rust</span>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">Tailwind</span>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">GraphQL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Highlights (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-12">Main Features</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low p-10 flex flex-col justify-between border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-primary">analytics</span>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-2">Predictive Analysis</h4>
+<p class="text-secondary font-body-md">Advanced ML models predicting system bottlenecks before they occur.</p>
+</div>
+</div>
+<div class="md:col-span-2 md:row-span-1 bg-primary p-10 flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl text-on-primary">bolt</span>
+<div class="text-on-primary">
+<h4 class="font-label-bold text-label-bold uppercase mb-2">Instant Sync</h4>
+<p class="font-body-md opacity-80">Real-time collaboration with sub-50ms latency across global nodes.</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-container-highest p-10 flex flex-col justify-between border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-primary">security</span>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-2">Encryption</h4>
+<p class="text-secondary text-sm">Military-grade protection.</p>
+</div>
+</div>
+<div class="md:col-span-1 md:row-span-1 bg-surface-bright p-10 flex flex-col justify-between border border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-primary">hub</span>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-2">API Mesh</h4>
+<p class="text-secondary text-sm">Modular integration system.</p>
+</div>
+</div>
+</div>
+</section><!-- User Flow Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-12">User Flow</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-4">
+<div class="text-display-xl-mobile md:text-display-xl font-bold text-surface-container-highest opacity-50">01</div>
+<h4 class="font-label-bold text-label-bold uppercase">Authentication</h4>
+<p class="text-secondary font-body-md">Secure biometric or cryptographic handshake to establish neural link.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-display-xl-mobile md:text-display-xl font-bold text-surface-container-highest opacity-50">02</div>
+<h4 class="font-label-bold text-label-bold uppercase">Sync Initialization</h4>
+<p class="text-secondary font-body-md">Calibration of local nodes with the global distributed ledger.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-display-xl-mobile md:text-display-xl font-bold text-surface-container-highest opacity-50">03</div>
+<h4 class="font-label-bold text-label-bold uppercase">Data Stream</h4>
+<p class="text-secondary font-body-md">Real-time visualization of cognitive load and data throughput.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="text-display-xl-mobile md:text-display-xl font-bold text-surface-container-highest opacity-50">04</div>
+<h4 class="font-label-bold text-label-bold uppercase">Optimization</h4>
+<p class="text-secondary font-body-md">Automated heuristic adjustments based on active user context.</p>
+</div>
+</div>
+</section>
+<!-- Technical Decisions & Challenges Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-12">
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Technical Decisions</h3>
+<ul class="list-disc list-outside ml-6 flex flex-col gap-6 text-body-lg text-secondary marker:text-primary">
+<li class="">
+<strong class="text-primary font-bold">Rust Core Engine:</strong> <span class="leading-relaxed">The architecture is anchored by a high-performance Rust core, selected for its uncompromising memory safety and zero-cost abstractions. This foundation allows for the processing of high-frequency data streams with surgical precision, ensuring system stability under extreme cognitive loads.</span>
+</li>
+<li class="">
+<strong class="text-primary font-bold">GraphQL Subscriptions:</strong> <span class="leading-relaxed">To achieve true real-time synchronization, we implemented a robust GraphQL subscription layer. This enables low-latency, bi-directional updates across the entire distributed ecosystem, maintaining a seamless state of flow between the interface and the underlying data architecture.</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Challenges</h3>
+<ul class="list-disc list-outside ml-6 flex flex-col gap-6 text-body-lg text-secondary marker:text-primary">
+<li class="">
+<strong class="text-primary font-bold">Latency Jitter:</strong> <span class="leading-relaxed">Navigating the complexities of inconsistent network speeds across global nodes required a sophisticated jitter-buffer strategy to maintain a sub-50ms synchronization threshold.</span>
+</li>
+<li class="">
+<strong class="text-primary font-bold">Cognitive Load:</strong> <span class="leading-relaxed">The primary design challenge was distilling complex data into an intuitive narrative, ensuring the operator remains informed without being overwhelmed by the sheer volume of real-time insights.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Gallery -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
+<div class="flex flex-col gap-element-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="aspect-square bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="Detail 1" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A close-up high-resolution screenshot of a minimalist code editor and a terminal window. The text is crisp and white against a deep black background, demonstrating high contrast and precision. Soft ambient light hits the screen, creating a clean, modern aesthetic that aligns with intellectual and technical work. The color scheme is strictly monochrome with subtle hints of gray for UI elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59J6-IH-lceGfWy6-KYmgAPGhvgsWczF2cNW9Lg2USbQ8HmxE8Vd5rP6CXRol4Q6smDDXtGpO28L9OR8vFxOb0ZYVmvVdQje3oVpHIWxGZa6C2nDYNwMMVKPzdFGXrzkw5GrUKN3j0E-VBD49ifGWWSyzyeHeKMUyIkn2FhqcKCX1Leb86lEOURJP-rQM1idYKxAOWhszGlyswX6u4ghc6A37oWbq1D22WASNRdNEn-Dw_19ZRoWhu09ICCX75WFFeRUJHsb1Vs3f">
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="Detail 2" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="An artistic representation of a complex data network visualized as glowing white lines on a black background. The structure resembles a neural network or a global map of digital connections. The lighting is low-key with intense highlights on the nodes, creating a high-end, futuristic feel. This image perfectly encapsulates the theme of distributed ecosystems and real-time cognitive synchronization in a professional setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2RCxGABbxcCXkXkLvF_KdNN-7nBv227AafyMY4381f6AULSMpJHPicSfbfUosuae8tnkWwtzh4lKHO1IlkwpIgEXvkrHpaO9K_fUsTa8iZuqROeJZ_5_3uy5zSNH87aTbseURoiMb_DeljOpGUS7QcLr5VHDlFbUJtA56aPDsz-A3c5_vrBKJkJ8yURA2jUFBGbt1TBDSYA0nFVUz6ecZgCR9Qw69dTahsG4SAxk9Ct_EJbt94b-XIzm28ZgGf3x8wXCLPdTtFeWd">
+</div>
+</div>
+<div class="aspect-[21/9] bg-surface-container overflow-hidden border border-outline-variant">
+<img alt="Wide View" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A wide, cinematic shot of a modern, minimalist studio space where a high-end desktop setup is perfectly arranged on a solid black desk. Behind the desk is a large window showing a clean, architectural city skyline at dusk. The room is mostly white with sharp black accents, creating a massive luxury of space. The lighting is cinematic and cool-toned, reinforcing the brand's sophisticated and authoritative editorial design identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIzBWD6trdZ9RwJkcmPdz_3eg7p81uz6KHjSJUkQxI0QeNJYCvi4giPSZ-U3sKVV83XPjNcHL752za5eW5LUMhgwy5X22Am99BQ82HPQ-KF61Hu2jbR1Q1_3oSBMZeq5vJZm1Wlb3FpoljGsm4151M6M2knrOk0Tg0yzR2hL_RcHTEJSoQhTzVAddqPNf5A3wuRhwVaibUZs4w_ZVYw7QtxrTYmK4olkCenwvnWAx9LhpezEwzpmOyGwVoriZV0n8Pe4QcN_1BGpsZ">
+</div>
+</div>
+</section>
+<!-- Final Navigation -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap py-section-gap border-t border-outline-variant text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Ready to see more?</h2>
+<a class="inline-flex items-center gap-4 bg-primary text-on-primary px-12 py-6 font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300" href="#">
+                Back to Portfolio
+                <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto gap-8">
+<div class="font-headline-lg text-headline-lg font-bold text-primary">PORTFOLIO</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Email</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Phone</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-200" href="#">Blog</a>
+</div>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">© 2024 PORTFOLIO. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+
+
+</body></html>
