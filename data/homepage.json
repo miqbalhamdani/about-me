@@ -1,14 +1,14 @@
 {
-  "navItems": [
-    { "href": "/#about", "label": "About" },
-    { "href": "/#stack", "label": "Tech Stack" },
-    { "href": "/#experience", "label": "Experience" },
-    { "href": "/#portfolio", "label": "Portfolio" },
-    { "href": "/#contact", "label": "Contact" }
-  ],
+  "brand": "IQBAL HAMDANI",
   "navCta": {
-    "href": "#",
-    "label": "Download CV"
+    "href": "#"
+  },
+  "hero": {
+    "h1": ["IQBAL", "HAMDANI"],
+    "h2": ["SENIOR", "FRONTEND", "ENGINEER."],
+    "contact": {
+      "href": "#contact"
+    }
   },
   "about": {
     "heading": "About",
@@ -16,7 +16,6 @@
     "highlights": [
       { "value": "12+ Years", "label": "Professional Experience" },
       { "value": "Staff Engineer", "label": "Current Seniority" },
-      { "value": "Architecture", "label": "Core Expertise" },
       { "value": "San Francisco", "label": "Current Location" }
     ]
   },
@@ -62,8 +61,6 @@
   ],
   "portfolioOrder": ["neural-sync-interface", "vanguard-identity"],
   "footer": {
-    "brand": "PORTFOLIO",
-    "copyright": "© 2024 PORTFOLIO. ALL RIGHTS RESERVED.",
     "links": [
       { "href": "mailto:hello@example.com", "label": "Email" },
       { "href": "#", "label": "Phone" },

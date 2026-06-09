@@ -32,13 +32,27 @@ export type Experience = {
 
 export type FooterContent = {
   brand: string;
-  copyright: string;
   links: LinkItem[];
 };
 
+export type NavCta = {
+  href: string;
+};
+
+export type HrefOnly = {
+  href: string;
+};
+
+export type HeroContent = {
+  h1: string[];
+  h2: string[];
+  contact: HrefOnly;
+};
+
 export type HomepageContent = {
-  navItems: NavItem[];
-  navCta: LinkItem;
+  brand: string;
+  navCta: NavCta;
+  hero: HeroContent;
   about: HomeAbout;
   techStackRows: TechStackRow[];
   experiences: Experience[];
