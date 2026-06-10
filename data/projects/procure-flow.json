@@ -46,7 +46,7 @@
       },
       {
         "icon": "groups",
-        "title": "Multi-Company Support",
+        "title": "Role-Based Access Control",
         "text": "Role-based access control for procurement teams, managers, suppliers, and logistics staff.",
         "backgroundImage": "/projects/procure-flow/membership-user.png"
       }

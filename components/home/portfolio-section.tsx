@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ProjectSummary } from "@/lib/content-types";
 
@@ -12,10 +13,12 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {projects.map((project) => (
           <article key={project.slug} className="group">
-            <div className="aspect-video bg-surface-container-highest mb-8 overflow-hidden">
-              <img
+            <div className="relative aspect-video bg-surface-container-highest mb-8 overflow-hidden">
+              <Image
                 alt={project.imageAlt}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
                 src={project.imageSrc}
               />
             </div>

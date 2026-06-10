@@ -31,7 +31,6 @@ export type Experience = {
 };
 
 export type FooterContent = {
-  brand: string;
   links: LinkItem[];
 };
 
