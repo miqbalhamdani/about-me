@@ -1,0 +1,102 @@
+{
+  "slug": "procure-flow",
+  "title": "ProcureFlow",
+  "subtitle": "Enterprise procurement and shipment management platform inspired by real-world supply chain operations.",
+  "coverImage": "/projects/procure-flow/dashboard.png",
+  "coverAlt": "ProcureFlow Dashboard",
+  "summaryTags": [
+    "Next.js",
+    "Tailwind CSS",
+    "Supabase"
+  ],
+  "heroImage": "/projects/procure-flow/dashboard.png",
+  "demoUrl": "http://procurement.jadigampang.com/",
+  "repoUrl": "https://github.com/miqbalhamdani/procure-flow/",
+  "about": [
+    "ProcureFlow is a portfolio project inspired by a real-world procurement and shipment platform used by enterprise organizations managing complex supply chain operations. The original system supports procurement workflows, supplier collaboration, shipment tracking, ERP integrations, and compliance reporting for international trade.",
+    "This project focuses on recreating the architectural and operational challenges behind such a platform, including multi-tenancy, role-based access control, parent-child company hierarchies, workspace isolation, approval workflows, and shipment lifecycle management. The goal was to demonstrate how large-scale business applications can be designed with scalability, maintainability, and security in mind."
+  ],
+  "stack": [
+    "Next.js",
+    "TypeScript",
+    "Supabase",
+    "Drizzle ORM",
+    "Tailwind CSS",
+    "Shadcn UI"
+  ],
+  "detail": {
+    "featureCards": [
+      {
+        "icon": "description",
+        "title": "Purchase Order Management",
+        "text": "Create, submit, approve, and track purchase orders through a structured workflow.",
+        "backgroundImage": "/projects/procure-flow/po-detail.png"
+      },
+      {
+        "icon": "local_shipping",
+        "title": "Shipment Tracking",
+        "text": "Monitor shipment progress from pending to delivered with timeline-based events.",
+        "backgroundImage": "/projects/procure-flow/shipment.png"
+      },
+      {
+        "icon": "business",
+        "title": "Multi-Company Support",
+        "text": "Manage parent-child company structures with secure tenant isolation.",
+        "backgroundImage": "/projects/procure-flow/multi-company.png"
+      },
+      {
+        "icon": "groups",
+        "title": "Multi-Company Support",
+        "text": "Role-based access control for procurement teams, managers, suppliers, and logistics staff.",
+        "backgroundImage": "/projects/procure-flow/membership-user.png"
+      }
+    ],
+    "userFlow": [
+      {
+        "step": "01",
+        "title": "Create Purchase Order",
+        "description": "Procurement staff creates a purchase order and submits it for approval."
+      },
+      {
+        "step": "02",
+        "title": "Approval Process",
+        "description": "Managers review and approve or reject submitted purchase orders."
+      },
+      {
+        "step": "03",
+        "title": "Shipment Management",
+        "description": "Suppliers create shipments, update transit status, and provide delivery information."
+      },
+      {
+        "step": "04",
+        "title": "Track Delivery",
+        "description": "Suppliers and logistics teams update shipment status until delivery is completed."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "Feature-Oriented Code Organization",
+        "description": "The frontend is organized around business domains rather than technical layers, making complex workflows easier to maintain and scale as new modules are introduced."
+      },
+      {
+        "title": "Tenant Isolation by Design",
+        "description": "Every business entity, query, and operation is scoped through workspace boundaries to ensure complete data separation between organizations. Tenant isolation was treated as a core architectural principle rather than an afterthought."
+      },
+      {
+        "title": "Context-Driven Workspace Switching",
+        "description": "Users can belong to multiple companies and switch contexts seamlessly. Application state, permissions, and data access are recalculated whenever the active workspace changes."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Managing Complex User Permissions",
+        "description": "Different stakeholders interact with the same workflow in different ways, requiring a permission system that remains flexible without becoming difficult to maintain."
+      },
+      {
+        "title": "Abstracting Real Production Systems",
+        "description": "The challenge was identifying which production concepts to recreate while keeping the portfolio project understandable and maintainable."
+      }
+    ],
+    "galleryImages": []
+  }
+}

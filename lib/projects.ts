@@ -41,7 +41,7 @@ export async function getProjectSummariesInOrder(order: string[]): Promise<Proje
       imageAlt: project.coverAlt,
       imageSrc: project.coverImage,
       tags: project.summaryTags,
-      title: project.summaryTitle,
-      description: project.summaryDescription,
+      title: project.title,
+      description: project.subtitle,
     }));
 }

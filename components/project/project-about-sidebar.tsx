@@ -25,12 +25,16 @@ export function ProjectAboutSidebar({ about, stack, demoUrl, repoUrl }: ProjectA
             <a
               className="w-full bg-primary text-on-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
               href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View Demo
             </a>
             <a
               className="w-full border border-primary text-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-container transition-colors duration-300"
               href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               GitHub
             </a>

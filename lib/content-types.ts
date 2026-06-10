@@ -64,6 +64,7 @@ export type FeatureCard = {
   icon: string;
   title: string;
   text: string;
+  backgroundImage?: string;
 };
 
 export type UserFlowStep = {
@@ -89,8 +90,6 @@ export type Project = {
   coverImage: string;
   coverAlt: string;
   summaryTags: string[];
-  summaryTitle: string;
-  summaryDescription: string;
   heroImage: string;
   demoUrl: string;
   repoUrl: string;
