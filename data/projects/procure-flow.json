@@ -4,11 +4,6 @@
   "subtitle": "Enterprise procurement and shipment management platform inspired by real-world supply chain operations.",
   "coverImage": "/projects/procure-flow/dashboard.png",
   "coverAlt": "ProcureFlow Dashboard",
-  "summaryTags": [
-    "Next.js",
-    "Tailwind CSS",
-    "Supabase"
-  ],
   "heroImage": "/projects/procure-flow/dashboard.png",
   "demoUrl": "http://procurement.jadigampang.com/",
   "repoUrl": "https://github.com/miqbalhamdani/procure-flow/",

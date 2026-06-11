@@ -40,7 +40,7 @@ export async function getProjectSummariesInOrder(order: string[]): Promise<Proje
       slug: project.slug,
       imageAlt: project.coverAlt,
       imageSrc: project.coverImage,
-      tags: project.summaryTags,
+      tags: project.stack.slice(0, 3),
       title: project.title,
       description: project.subtitle,
     }));

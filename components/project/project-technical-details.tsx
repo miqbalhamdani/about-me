@@ -6,6 +6,10 @@ type ProjectTechnicalDetailsProps = {
 };
 
 function DetailList({ title, items }: { title: string; items: TextBlock[] }) {
+  if (items.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       <h3 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">
@@ -24,11 +28,15 @@ function DetailList({ title, items }: { title: string; items: TextBlock[] }) {
 }
 
 export function ProjectTechnicalDetails({ decisions, challenges }: ProjectTechnicalDetailsProps) {
+  if (decisions.length === 0 && challenges.length === 0) {
+    return null;
+  }
+
   return (
     <section className="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap">
       <div className="flex flex-col gap-12">
-        <DetailList title="Technical Decisions" items={decisions} />
-        <DetailList title="Challenges" items={challenges} />
+        { decisions.length > 0 && <DetailList title="Technical Decisions" items={decisions} /> }
+        { challenges.length > 0 && <DetailList title="Challenges" items={challenges} /> }
       </div>
     </section>
   );

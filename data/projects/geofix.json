@@ -1,0 +1,87 @@
+{
+  "slug": "geofix",
+  "title": "GeoFix",
+  "subtitle": "A geospatial utility for fixing polygon geometry and checking shared interior overlap.",
+  "coverImage": "/projects/geofix/polygon-fixer.png",
+  "coverAlt": "GeoFix Polygon Fixer",
+  "heroImage": "/projects/geofix/polygon-fixer.png",
+  "demoUrl": "https://geofix.jadigampang.com/",
+  "repoUrl": "https://github.com/miqbalhamdani/geofix/",
+  "about": [
+    "This project started from a real operational problem: broken polygon data needed to be fixed before it could be used reliably. At first, the easiest solution was manual correction, but existing tools made the process more complicated than expected. Some required WKT-to-GeoJSON conversion, some gave unclear validation errors, and others expected users to work from the terminal. GeoFix was built to make polygon repair and overlap checking simple enough for non-technical users.",
+    "GeoFix is a client-side geospatial utility for validating, repairing, converting, and visually inspecting polygon geometry. It supports WKT and GeoJSON inputs, renders polygons on an interactive map, detects common geometry issues, helps users export corrected geometry in GeoJSON, WKT, or KML format, and includes a polygon overlap checker to compare two polygons by spatial relationship, overlap area, percentage overlap, and intersection coordinates."
+  ],
+  "stack": [
+    "Astro 6",
+    "Turf.js",
+    "Leaflet",
+    "TypeScript",
+    "Tailwind CSS"
+  ],
+  "detail": {
+    "featureCards": [
+      {
+        "icon": "build",
+        "title": "Polygon Validation & Repair",
+        "text": "Validate polygon geometry and automatically repair common issues such as unclosed rings, invalid winding order, and duplicate coordinates.",
+        "backgroundImage": "/projects/geofix/polygon-fixer.png"
+      },
+      {
+        "icon": "compare_arrows",
+        "title": "Polygon Overlap Checker",
+        "text": "Compare two polygons and detect whether they share interior area, including overlap area, percentage overlap, containment, and intersection points.",
+        "backgroundImage": "/projects/geofix/overlap-checker.png"
+      },
+      {
+        "icon": "map",
+        "title": "Interactive Spatial Preview",
+        "text": "Render geometry on an interactive map with zoom controls, EPSG:4326 context, and visual feedback for polygon boundaries and overlap results.",
+        "backgroundImage": "/projects/geofix/map-preview.png"
+      },
+      {
+        "icon": "school",
+        "title": "Geometry Standards Guide",
+        "text": "Explain important geometry rules such as clockwise versus counterclockwise rings, closed polygons, and duplicate point handling through visual examples.",
+        "backgroundImage": "/projects/geofix/geometry-guide.png"
+      }
+    ],
+    "userFlow": [
+      {
+        "step": "01",
+        "title": "Paste Geometry Input",
+        "description": "Users paste a polygon string in WKT, GeoJSON, or coordinate format into the validation or overlap checker interface."
+      },
+      {
+        "step": "02",
+        "title": "Validate Polygons",
+        "description": "The application parses the geometry, checks validity rules, and calculates spatial relationships using geospatial processing logic."
+      },
+      {
+        "step": "03",
+        "title": "Preview on Map",
+        "description": "Valid polygons are displayed on an interactive map so users can visually inspect boundaries, intersections, and overlap areas."
+      },
+      {
+        "step": "04",
+        "title": "Export Repaired Geometry",
+        "description": "Users can copy repaired output or convert validated geometry into formats such as GeoJSON, WKT, or KML."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "Geospatial Logic with Turf.js",
+        "description": "I chose Turf.js to handle core geospatial operations, including validation helpers, area calculation, overlap detection, self-intersection detection, ring orientation, and polygon repair."
+      },
+      {
+        "title": "Interactive Map Visualization",
+        "description": "I used Leaflet with OpenStreetMap tiles to provide a fast and familiar way for users to visually inspect polygon geometry directly in the browser."
+      },
+      {
+        "title": "Unified Geometry Format",
+        "description": "I normalized all supported inputs into a GeoJSON Feature internally, then formatted the result back into the user’s selected export format such as GeoJSON, WKT, or KML."
+      }
+    ],
+    "challenges": [],
+    "galleryImages": []
+  }
+}

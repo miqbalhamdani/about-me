@@ -88,7 +88,6 @@ export type Project = {
   subtitle: string;
   coverImage: string;
   coverAlt: string;
-  summaryTags: string[];
   heroImage: string;
   demoUrl: string;
   repoUrl: string;
