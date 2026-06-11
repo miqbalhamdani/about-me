@@ -61,8 +61,6 @@ export type HomepageContent = {
 
 export type FeatureCard = {
   icon: string;
-  title: string;
-  text: string;
   backgroundImage?: string;
 };
 
@@ -89,8 +87,8 @@ export type Project = {
   coverImage: string;
   coverAlt: string;
   heroImage: string;
-  demoUrl: string;
-  repoUrl: string;
+  demoUrl: string | null;
+  repoUrl: string | null;
   about: string[];
   stack: string[];
   detail: {

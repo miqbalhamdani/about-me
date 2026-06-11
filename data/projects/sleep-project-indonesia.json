@@ -1,0 +1,106 @@
+{
+  "slug": "sleep-project-indonesia",
+  "title": "Sleep Project Indonesia",
+  "subtitle": "An ecommerce website for high-quality bedding, pajamas, and robes made from Japanese cotton, premium cotton, and Tencel.",
+  "coverImage": "/projects/sleep-project-indonesia/hero.png",
+  "coverAlt": "Sleep Project Indonesia ecommerce storefront",
+  "heroImage": "/projects/sleep-project-indonesia/hero.png",
+  "demoUrl": "https://sleepprojectindonesia.com/",
+  "repoUrl": "",
+  "about": [
+    "Sleep Project Indonesia is an ecommerce platform for custom bedding products, built around a Laravel storefront and a back-office CMS for managing products, categories, homepage content, promos, blogs, customers, and orders.",
+    "The project handles the full customer journey from catalog browsing and product variant selection through cart management, address capture, shipping-rate calculation, payment tokenization, order creation, and member transaction history. The implementation combines server-rendered Blade pages with Vue components where the purchasing workflow needs richer interaction."
+  ],
+  "stack": [
+    "Laravel 7",
+    "Vue 2",
+    "PHP",
+    "MySQL",
+    "Vuex",
+    "Bootstrap 4",
+    "AdminLTE",
+    "Midtrans",
+    "Biteship",
+    "DigitalOcean"
+  ],
+  "detail": {
+    "featureCards": [
+      {
+        "icon": "shopping_cart",
+        "backgroundImage": "/projects/sleep-project-indonesia/product-list.png"
+      },
+      {
+        "icon": "local_shipping",
+        "backgroundImage": "/projects/sleep-project-indonesia/shipping-rate.png"
+      },
+      {
+        "icon": "payments",
+        "backgroundImage": "/projects/sleep-project-indonesia/checkout-payments.png"
+      },
+      {
+        "icon": "admin_panel_settings",
+        "backgroundImage": "/projects/sleep-project-indonesia/admin-cms.png"
+      }
+    ],
+    "userFlow": [
+      {
+        "step": "01",
+        "title": "Discover Products",
+        "description": "Customers browse homepage modules, category pages, search results, blog content, and product detail pages with SEO-friendly metadata."
+      },
+      {
+        "step": "02",
+        "title": "Configure Cart",
+        "description": "Customers choose product variants, optional additional items, quantities, colors, and order notes before adding items to a persistent cart."
+      },
+      {
+        "step": "03",
+        "title": "Checkout",
+        "description": "The checkout flow captures customer and address details, syncs product pricing and weights, calculates shipping rates with Biteship, applies eligible promos, and creates an order."
+      },
+      {
+        "step": "04",
+        "title": "Pay and Track",
+        "description": "Midtrans handles payment options while member pages and admin order tools keep payment status, order status, tracking numbers, and transaction history visible."
+      }
+    ],
+    "decisions": [
+      {
+        "title": "Hybrid Laravel and Vue Architecture",
+        "description": "Blade templates provide the marketing, catalog, account, and admin surfaces, while Vue components power cart, checkout, product configuration, profile, and admin controls that need client-side state."
+      },
+      {
+        "title": "Repository Layer for Core Commerce Data",
+        "description": "Products, carts, orders, categories, users, addresses, blogs, and homepage content are accessed through repositories, keeping controllers focused on request handling and workflow orchestration."
+      },
+      {
+        "title": "Server-Side Checkout Validation",
+        "description": "The checkout controller recalculates totals from saved cart records before creating Midtrans payloads, reducing the risk of client-side price or weight tampering."
+      }
+    ],
+    "challenges": [
+      {
+        "title": "Variant-Heavy Product Modeling",
+        "description": "Bedding products need size, type, color, discount pricing, weight, images, and optional add-ons, so product and cart logic must keep variant data synchronized during checkout."
+      },
+      {
+        "title": "Coordinating External Commerce Services",
+        "description": "Payments and shipping rates depend on third-party APIs, requiring retry handling, configurable credentials, normalized courier responses, and careful order-state updates after payment callbacks."
+      }
+    ],
+    "galleryImages": [
+      {
+        "src": "/projects/sleep-project-indonesia/cart.png",
+        "alt": "Sleep Project Indonesia cart page"
+      },
+      {
+        "src": "/projects/sleep-project-indonesia/my-profile.png",
+        "alt": "Sleep Project Indonesia my profile page"
+      },
+      {
+        "src": "/projects/sleep-project-indonesia/product-detail.png",
+        "alt": "Sleep Project Indonesia product detail page"
+      }
+    ]
+  }
+}

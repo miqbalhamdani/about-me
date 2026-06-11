@@ -22,26 +22,18 @@
     "featureCards": [
       {
         "icon": "build",
-        "title": "Polygon Validation & Repair",
-        "text": "Validate polygon geometry and automatically repair common issues such as unclosed rings, invalid winding order, and duplicate coordinates.",
         "backgroundImage": "/projects/geofix/polygon-fixer.png"
       },
       {
         "icon": "compare_arrows",
-        "title": "Polygon Overlap Checker",
-        "text": "Compare two polygons and detect whether they share interior area, including overlap area, percentage overlap, containment, and intersection points.",
         "backgroundImage": "/projects/geofix/overlap-checker.png"
       },
       {
         "icon": "map",
-        "title": "Interactive Spatial Preview",
-        "text": "Render geometry on an interactive map with zoom controls, EPSG:4326 context, and visual feedback for polygon boundaries and overlap results.",
         "backgroundImage": "/projects/geofix/map-preview.png"
       },
       {
         "icon": "school",
-        "title": "Geometry Standards Guide",
-        "text": "Explain important geometry rules such as clockwise versus counterclockwise rings, closed polygons, and duplicate point handling through visual examples.",
         "backgroundImage": "/projects/geofix/geometry-guide.png"
       }
     ],

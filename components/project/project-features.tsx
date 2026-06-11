@@ -19,57 +19,34 @@ const FEATURE_CARD_LAYOUT_CLASSES = [
 const FEATURE_CARD_CONTENT_CLASSES = [
   {
     iconClassName: "text-4xl text-primary",
-    textWrapClassName: "",
-    titleClassName: "",
-    textClassName: "text-secondary font-body-md",
   },
   {
     iconClassName: "text-4xl text-on-primary",
-    textWrapClassName: "text-on-primary",
-    titleClassName: "",
-    textClassName: "font-body-md opacity-80",
   },
   {
     iconClassName: "text-4xl text-primary",
-    textWrapClassName: "",
-    titleClassName: "",
-    textClassName: "text-secondary text-sm",
   },
   {
     iconClassName: "text-4xl text-primary",
-    textWrapClassName: "",
-    titleClassName: "",
-    textClassName: "text-secondary text-sm",
   },
 ] as const;
 
 const FEATURE_CARD_IMAGE_CONTENT_CLASSES = {
   iconClassName: "text-4xl text-white",
-  textWrapClassName: "text-white",
-  titleClassName: "text-white",
-  textClassName: "text-white/80 font-body-md",
 } as const;
 
 const FEATURE_CARD_PLACEHOLDERS: FeatureCard[] = [
   {
     icon: "auto_awesome",
-    title: "Feature Slot",
-    text: "Additional detail will appear here soon.",
   },
   {
     icon: "auto_awesome",
-    title: "Feature Slot",
-    text: "Additional detail will appear here soon.",
   },
   {
     icon: "auto_awesome",
-    title: "Feature Slot",
-    text: "Additional detail will appear here soon.",
   },
   {
     icon: "auto_awesome",
-    title: "Feature Slot",
-    text: "Additional detail will appear here soon.",
   },
 ];
 
@@ -103,13 +80,13 @@ export function ProjectFeatures({ featureCards }: ProjectFeaturesProps) {
             if (feature.backgroundImage) {
               return (
                 <button
-                  key={`${feature.title}-${index}`}
+                  key={`${feature.icon}-${index}`}
                   type="button"
                   className={`${FEATURE_CARD_LAYOUT_CLASSES[index]} group relative overflow-hidden p-10 flex flex-col justify-between text-left cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-low transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl`}
                   onClick={() => setSelectedImage(feature)}
                 >
                   <Image
-                    alt={feature.title}
+                    alt=""
                     aria-hidden="true"
                     className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105"
                     loading="eager"
@@ -121,12 +98,7 @@ export function ProjectFeatures({ featureCards }: ProjectFeaturesProps) {
 
                   <div className="relative z-10 flex h-full flex-col justify-between">
                     <MaterialIcon icon={feature.icon} className={contentClasses.iconClassName} />
-                    <div className={contentClasses.textWrapClassName}>
-                      <h4 className={`font-label-bold text-label-bold uppercase mb-2 ${contentClasses.titleClassName}`}>
-                        {feature.title}
-                      </h4>
-                      {/* <p className={contentClasses.textClassName}>{feature.text}</p> */}
-                    </div>
+                    <span className="sr-only">Open feature image preview</span>
                   </div>
                 </button>
               );
@@ -134,17 +106,11 @@ export function ProjectFeatures({ featureCards }: ProjectFeaturesProps) {
 
             return (
               <article
-                key={`${feature.title}-${index}`}
+                key={`${feature.icon}-${index}`}
                 className={`${FEATURE_CARD_LAYOUT_CLASSES[index]} relative overflow-hidden p-10 flex flex-col justify-between`}
               >
                 <div className="relative z-10 flex h-full flex-col justify-between">
                   <MaterialIcon icon={feature.icon} className={contentClasses.iconClassName} />
-                  <div className={contentClasses.textWrapClassName}>
-                    <h4 className={`font-label-bold text-label-bold uppercase mb-2 ${contentClasses.titleClassName}`}>
-                      {feature.title}
-                    </h4>
-                    {/* <p className={contentClasses.textClassName}>{feature.text}</p> */}
-                  </div>
                 </div>
               </article>
             );
@@ -173,7 +139,7 @@ export function ProjectFeatures({ featureCards }: ProjectFeaturesProps) {
 
             <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl" onClick={(event) => event.stopPropagation()}>
               <Image
-                alt={selectedImage.title}
+                alt="Project feature image preview"
                 className="object-contain"
                 fill
                 sizes="100vw"

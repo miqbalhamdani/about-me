@@ -1,8 +1,8 @@
 type ProjectAboutSidebarProps = {
   about: string[];
   stack: string[];
-  demoUrl: string;
-  repoUrl: string;
+  demoUrl: string | null;
+  repoUrl: string | null;
 };
 
 export function ProjectAboutSidebar({ about, stack, demoUrl, repoUrl }: ProjectAboutSidebarProps) {
@@ -22,22 +22,26 @@ export function ProjectAboutSidebar({ about, stack, demoUrl, repoUrl }: ProjectA
 
         <aside className="md:col-span-4 flex flex-col gap-element-gap">
           <div className="flex flex-col gap-4 mb-4">
-            <a
-              className="w-full bg-primary text-on-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Demo
-            </a>
-            <a
-              className="w-full border border-primary text-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-container transition-colors duration-300"
-              href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+            {demoUrl ? (
+              <a
+                className="w-full bg-primary text-on-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-secondary transition-colors duration-300"
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Demo
+              </a>
+            ) : null}
+            {repoUrl ? (
+              <a
+                className="w-full border border-primary text-primary py-4 px-6 text-center font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-container transition-colors duration-300"
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            ) : null}
           </div>
           <div>
             <h3 className="font-label-bold text-label-bold uppercase tracking-widest text-primary mb-4">Tech Stack</h3>

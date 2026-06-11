@@ -23,26 +23,18 @@
     "featureCards": [
       {
         "icon": "description",
-        "title": "Purchase Order Management",
-        "text": "Create, submit, approve, and track purchase orders through a structured workflow.",
         "backgroundImage": "/projects/procure-flow/po-detail.png"
       },
       {
         "icon": "local_shipping",
-        "title": "Shipment Tracking",
-        "text": "Monitor shipment progress from pending to delivered with timeline-based events.",
         "backgroundImage": "/projects/procure-flow/shipment.png"
       },
       {
         "icon": "business",
-        "title": "Multi-Company Support",
-        "text": "Manage parent-child company structures with secure tenant isolation.",
         "backgroundImage": "/projects/procure-flow/multi-company.png"
       },
       {
         "icon": "groups",
-        "title": "Role-Based Access Control",
-        "text": "Role-based access control for procurement teams, managers, suppliers, and logistics staff.",
         "backgroundImage": "/projects/procure-flow/membership-user.png"
       }
     ],
