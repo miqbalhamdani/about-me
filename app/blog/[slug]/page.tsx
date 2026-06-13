@@ -78,6 +78,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const recommendedPosts = await getRecommendedBlogPosts(post.slug, 3);
+  const content = await renderMarkdown(post.content);
 
   return (
     <main className="mx-auto w-full max-w-max-width px-margin-mobile py-section-gap md:px-margin-desktop">
@@ -110,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               src={post.coverImage}
             />
           </div>
-          <div className="font-body-md text-body-md">{renderMarkdown(post.content)}</div>
+          <div className="font-body-md text-body-md">{content}</div>
         </article>
 
         <aside className="flex flex-col gap-12 lg:w-[30%]" aria-label="Article information">

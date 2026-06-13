@@ -7,7 +7,13 @@ import Image from "next/image";
 import type { BlogPost, BlogPostMeta, BlogPostSummary } from "@/lib/content-types";
 
 const blogDirectory = path.join(process.cwd(), "data", "blog");
+const publicDirectory = path.join(process.cwd(), "public");
 const frontmatterPattern = /^---\n([\s\S]*?)\n---\n?/;
+
+type ImageDimensions = {
+  width: number;
+  height: number;
+};
 
 type MarkdownBlock =
   | { type: "heading"; depth: 2 | 3; text: string }
@@ -302,6 +308,129 @@ function sanitizeHref(href: string): string {
   return "#";
 }
 
+function readPngDimensions(buffer: Buffer): ImageDimensions | null {
+  if (buffer.length < 24 || buffer.toString("ascii", 1, 4) !== "PNG") {
+    return null;
+  }
+
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
+function readJpegDimensions(buffer: Buffer): ImageDimensions | null {
+  if (buffer.length < 4 || buffer[0] !== 0xff || buffer[1] !== 0xd8) {
+    return null;
+  }
+
+  let offset = 2;
+
+  while (offset < buffer.length) {
+    if (buffer[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = buffer[offset + 1];
+
+    if (marker === 0xd9 || marker === 0xda) {
+      return null;
+    }
+
+    const segmentLength = buffer.readUInt16BE(offset + 2);
+    const isStartOfFrame =
+      (marker >= 0xc0 && marker <= 0xc3) ||
+      (marker >= 0xc5 && marker <= 0xc7) ||
+      (marker >= 0xc9 && marker <= 0xcb) ||
+      (marker >= 0xcd && marker <= 0xcf);
+
+    if (isStartOfFrame) {
+      return {
+        height: buffer.readUInt16BE(offset + 5),
+        width: buffer.readUInt16BE(offset + 7),
+      };
+    }
+
+    offset += 2 + segmentLength;
+  }
+
+  return null;
+}
+
+function readWebpDimensions(buffer: Buffer): ImageDimensions | null {
+  if (buffer.length < 30 || buffer.toString("ascii", 0, 4) !== "RIFF" || buffer.toString("ascii", 8, 12) !== "WEBP") {
+    return null;
+  }
+
+  const format = buffer.toString("ascii", 12, 16);
+
+  if (format === "VP8X") {
+    return {
+      width: 1 + buffer.readUIntLE(24, 3),
+      height: 1 + buffer.readUIntLE(27, 3),
+    };
+  }
+
+  if (format === "VP8 " && buffer.length >= 30) {
+    return {
+      width: buffer.readUInt16LE(26) & 0x3fff,
+      height: buffer.readUInt16LE(28) & 0x3fff,
+    };
+  }
+
+  if (format === "VP8L" && buffer.length >= 25) {
+    const bits = buffer.readUInt32LE(21);
+
+    return {
+      width: (bits & 0x3fff) + 1,
+      height: ((bits >> 14) & 0x3fff) + 1,
+    };
+  }
+
+  return null;
+}
+
+function readImageDimensions(buffer: Buffer): ImageDimensions | null {
+  return readPngDimensions(buffer) ?? readJpegDimensions(buffer) ?? readWebpDimensions(buffer);
+}
+
+function getPublicImagePath(src: string): string | null {
+  if (!src.startsWith("/") || src.startsWith("//")) {
+    return null;
+  }
+
+  try {
+    const { pathname } = new URL(src, "http://localhost");
+    const decodedPath = decodeURIComponent(pathname);
+    const filePath = path.resolve(publicDirectory, `.${decodedPath}`);
+
+    if (!filePath.startsWith(`${publicDirectory}${path.sep}`)) {
+      return null;
+    }
+
+    return filePath;
+  } catch {
+    return null;
+  }
+}
+
+async function getLocalImageDimensions(src: string): Promise<ImageDimensions | null> {
+  const filePath = getPublicImagePath(src);
+
+  if (!filePath) {
+    return null;
+  }
+
+  try {
+    const buffer = await fs.readFile(filePath);
+
+    return readImageDimensions(buffer);
+  } catch {
+    return null;
+  }
+}
+
 function renderInline(text: string, keyPrefix: string): ReactNode[] {
   const patterns: Array<{ type: "code" | "link" | "strong" | "em"; regex: RegExp }> = [
     { type: "code", regex: /`([^`]+)`/ },
@@ -374,13 +503,10 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
   return [...nodes, ...renderInline(after, `${keyPrefix}-after-${match.index}`)];
 }
 
-export function renderMarkdown(markdown: string): ReactNode {
+export async function renderMarkdown(markdown: string): Promise<ReactNode> {
   const blocks = parseMarkdownBlocks(markdown);
-
-  return createElement(
-    Fragment,
-    null,
-    blocks.map((block, index) => {
+  const renderedBlocks = await Promise.all(
+    blocks.map(async (block, index) => {
       const key = `md-${index}`;
 
       if (block.type === "heading") {
@@ -432,6 +558,30 @@ export function renderMarkdown(markdown: string): ReactNode {
         );
       }
 
+      const dimensions = await getLocalImageDimensions(block.src);
+
+      if (dimensions) {
+        return createElement(
+          "figure",
+          { className: "my-12", key },
+          createElement(
+            "div",
+            { className: "inline-block max-w-full overflow-hidden border border-outline-variant bg-surface-container-low" },
+            createElement(Image, {
+              alt: block.alt,
+              className: "block h-auto w-auto max-w-full grayscale",
+              height: dimensions.height,
+              sizes: "(min-width: 1024px) 760px, 100vw",
+              src: block.src,
+              width: dimensions.width,
+            }),
+          ),
+          block.alt
+            ? createElement("figcaption", { className: "mt-3 font-label-sm text-label-sm text-secondary" }, block.alt)
+            : null,
+        );
+      }
+
       return createElement(
         "figure",
         { className: "my-12", key },
@@ -452,4 +602,6 @@ export function renderMarkdown(markdown: string): ReactNode {
       );
     }),
   );
+
+  return createElement(Fragment, null, renderedBlocks);
 }
