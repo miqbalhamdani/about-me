@@ -6,6 +6,11 @@ type MaterialIconProps = {
 const iconPaths: Record<string, string[]> = {
   arrow_back: ["M19 12H5", "M12 19l-7-7 7-7"],
   arrow_forward: ["M5 12h14", "M12 5l7 7-7 7"],
+  alternate_email: [
+    "M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8",
+    "M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z",
+    "M16 8v4",
+  ],
   auto_awesome: [
     "M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z",
     "M5 17l.8 2.2L8 20l-2.2.8L5 23l-.8-2.2L2 20l2.2-.8L5 17z",
@@ -41,6 +46,7 @@ const iconPaths: Record<string, string[]> = {
     "M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
     "M17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
   ],
+  link: ["M10 13a5 5 0 0 0 7.07 0l2.12-2.12a5 5 0 0 0-7.07-7.07L11 4.93", "M14 11a5 5 0 0 0-7.07 0L4.81 13.12a5 5 0 0 0 7.07 7.07L13 19.07"],
   menu: ["M4 7h16", "M4 12h16", "M4 17h16"],
 };
 

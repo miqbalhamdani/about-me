@@ -108,3 +108,22 @@ export type ProjectSummary = {
   title: string;
   description: string;
 };
+
+export type BlogPostMeta = {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  coverImage: string;
+  coverAlt: string;
+  featured?: boolean;
+};
+
+export type BlogPost = BlogPostMeta & {
+  content: string;
+};
+
+export type BlogPostSummary = BlogPostMeta;
