@@ -11,6 +11,7 @@ const navItems: NavItem[] = [
   { href: "/#stack", label: "Tech Stack" },
   { href: "/#experience", label: "Experience" },
   { href: "/#portfolio", label: "Portfolio" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const NAV_CTA_LABEL = "Download CV";

@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The Future of WebGPU: Unlocking Native Performance on the Web</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "surface-container-low": "#f3f3f4",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#1a1c1c",
+                    "surface": "#f9f9f9",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary-container": "#1b1b1b",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-surface-variant": "#4c4546",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary-container": "#626262",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#cfc4c5",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#474747",
+                    "secondary-container": "#e1dfdf",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-dim": "#dadada",
+                    "primary": "#000000",
+                    "surface-tint": "#5e5e5e",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#1a1c1c",
+                    "surface-variant": "#e2e2e2",
+                    "on-primary-container": "#848484",
+                    "inverse-primary": "#c6c6c6",
+                    "error-container": "#ffdad6",
+                    "secondary": "#5e5e5e",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "outline": "#7e7576",
+                    "tertiary": "#000000",
+                    "on-tertiary-container": "#838484",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "element-gap": "32px",
+                    "max-width": "1200px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "section-gap": "120px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-xl-mobile": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #ffffff;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-content h2 {
+            margin-top: 64px;
+            margin-bottom: 24px;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        .editorial-content p {
+            margin-bottom: 32px;
+            color: #454747;
+        }
+        .editorial-content blockquote {
+            border-left: 4px solid #000000;
+            padding-left: 32px;
+            margin: 48px 0;
+            font-style: italic;
+            font-size: 24px;
+            line-height: 36px;
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full bg-surface-container-lowest border-b border-outline-variant z-50">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="font-label-bold text-label-bold tracking-widest text-primary">PORTFOLIO</div>
+<div class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Tech Stack</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Experience</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold hover:opacity-90 transition-opacity">Download CV</button>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex gap-2 mb-6">
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase tracking-wider">Engineering</span>
+<span class="bg-primary text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase tracking-wider">WebGPU</span>
+</div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl mb-8 leading-tight">
+                The Future of WebGPU: Unlocking Native Performance on the Web
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-3xl">
+                Exploring how the new WebGPU API is fundamentally changing the landscape of high-performance graphics and compute.
+            </p>
+</header>
+<!-- Main Layout: Content | Sidebar -->
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Article Content Column (70%) -->
+<article class="lg:w-[70%]">
+<div class="mb-12 aspect-[16/9] overflow-hidden bg-surface-container-low border border-outline-variant">
+<img alt="Abstract visualization of GPU processing units" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-fidelity conceptual rendering of a modern GPU architecture, featuring intricate crystalline structures and glowing geometric paths of light that represent data flow. The aesthetic is extremely minimalist and futuristic, utilizing a monochrome palette of deep charcoals and bright whites with subtle cool-toned highlights. The lighting is sharp and cinematic, casting long, clean shadows across a dark, polished floor, creating a mood of advanced technical precision and intellectual depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApNP0mfFns1mxM0OyZcYhPnb0U5IFCVI1nChIVM1CT_hVmloU0GcP3RqlWkTPxHjZ0AQ8bcCbf7MgByBG5YBlZjt9CFBjBtlkniTVdTco7nmaSPedP7nCyU_mNCemnqyQwtSl_AQr2oE-zahoPKjx1uoQf4APQwsLkKdMhOjxlA4umk5l-tJrEvXyq4kUf36oWlsKkimfkYW6jpaHuSqzyR0alWDGpO1K9V2QCW-gicHZlpmVsWfhcfH2ExaOVVLLh4n9Kj37JV18q">
+</div>
+<div class="editorial-content font-body-md text-body-md">
+<p>
+                        For years, the promise of native-level performance within a browser environment has been the holy grail of web development. WebGL provided a significant leap forward, but as hardware evolved, the abstraction layers began to show their age. WebGPU represents a paradigm shift—not just an incremental update, but a complete rethinking of how web applications interface with modern graphics hardware.
+                    </p>
+<h2>A Lower Level of Abstraction</h2>
+<p>
+                        WebGPU is designed to better align with contemporary GPU APIs such as Vulkan, Metal, and Direct3D 12. Unlike WebGL, which is based on an older state-machine model, WebGPU introduces the concept of pipelines, bind groups, and command buffers. This architecture significantly reduces the CPU overhead associated with drawing calls, allowing for far more complex scenes and compute tasks.
+                    </p>
+<blockquote>
+                        "WebGPU doesn't just make things faster; it makes entirely new classes of applications possible in the browser."
+                    </blockquote>
+<p>
+                        One of the most exciting aspects of WebGPU is its robust support for compute shaders. Beyond graphics, this unlocks the ability to run massive parallel processing tasks directly on the GPU. From real-time machine learning inference to complex physics simulations, the browser is becoming a legitimate platform for heavy-duty engineering applications.
+                    </p>
+<h2>The Impact on Engineering Workflows</h2>
+<p>
+                        For engineering teams, this means the gap between "native" and "web" is narrowing to the point of invisibility. CAD tools, professional-grade video editors, and large-scale data visualization platforms can now be delivered through a URL without sacrificing the raw power users expect from desktop software.
+                    </p>
+</div>
+</article>
+<!-- Sidebar (30%) -->
+<aside class="lg:w-[30%] flex flex-col gap-12">
+<!-- Author Info -->
+<div class="pb-8 border-b border-outline-variant">
+<p class="font-label-bold text-label-sm text-secondary uppercase tracking-widest mb-4">Author</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container rounded-full overflow-hidden grayscale">
+<img alt="Author portrait" data-alt="A professional, minimalist headshot of a software engineer in their early 30s, looking directly at the camera with a neutral, confident expression. The lighting is soft and directional, typical of a high-end editorial shoot, with a clean, out-of-focus studio background in shades of light gray. The image is presented in a crisp black and white style to maintain the sophisticated, modern aesthetic of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxSkEweiaqoddRxT-keiX2F8YeBg_o2v7XPGLcs2yOAFU3w2HmO8qkgPgZUbjc1JxTMcTJoBUBpGesEcoVb2rDaFg16BN3Kp1p-L9kPITDohwsUURpc4JKIdQJWcf2s9IPTtnT_p-5Vp-6Io_qDWY1NIqvZmpzL4DxXAD2ckJ5SXF8j9euFb5tQJoUwO-muSQH_QL103BBp4XalUegrjNOB5mM9ettL90XQGKVk9ysAxp5wM6z6o2wXSZGRt0VcLXZggmZQz2uuDK3">
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-primary">Marcus Thorne</p>
+<p class="font-label-sm text-label-sm text-secondary">Principal Engineer</p>
+</div>
+</div>
+</div>
+<!-- Date & Reading Time -->
+<div class="pb-8 border-b border-outline-variant">
+<div class="flex flex-col gap-4">
+<div>
+<p class="font-label-bold text-label-sm text-secondary uppercase tracking-widest mb-1">Published</p>
+<p class="font-body-md text-body-md">October 24, 2024</p>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-secondary uppercase tracking-widest mb-1">Read Time</p>
+<p class="font-body-md text-body-md">8 Minutes</p>
+</div>
+</div>
+</div>
+<!-- Sticky Share Buttons -->
+<div class="sticky top-32 flex flex-col gap-6">
+<div>
+<p class="font-label-bold text-label-sm text-secondary uppercase tracking-widest mb-4">Share Article</p>
+<div class="flex flex-col gap-2">
+<button class="flex items-center gap-3 py-2 px-4 border border-outline-variant hover:bg-primary hover:text-on-primary transition-all duration-200 group">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span class="font-label-bold text-label-bold">LinkedIn</span>
+</button>
+<button class="flex items-center gap-3 py-2 px-4 border border-outline-variant hover:bg-primary hover:text-on-primary transition-all duration-200 group">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+<span class="font-label-bold text-label-bold">Twitter</span>
+</button>
+<button class="flex items-center gap-3 py-2 px-4 border border-outline-variant hover:bg-primary hover:text-on-primary transition-all duration-200 group">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span class="font-label-bold text-label-bold">Copy Link</span>
+</button>
+</div>
+</div>
+<!-- Related Tags -->
+<div class="mt-8">
+<p class="font-label-bold text-label-sm text-secondary uppercase tracking-widest mb-4">Related Topics</p>
+<div class="flex flex-wrap gap-2">
+<a class="px-3 py-1 border border-outline-variant font-label-sm text-label-sm hover:border-primary transition-colors italic" href="#">#performance</a>
+<a class="px-3 py-1 border border-outline-variant font-label-sm text-label-sm hover:border-primary transition-colors italic" href="#">#graphics</a>
+<a class="px-3 py-1 border border-outline-variant font-label-sm text-label-sm hover:border-primary transition-colors italic" href="#">#api_design</a>
+<a class="px-3 py-1 border border-outline-variant font-label-sm text-label-sm hover:border-primary transition-colors italic" href="#">#wasm</a>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Recommended Section -->
+<section class="mt-section-gap pt-16 border-t border-outline-variant">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-12">Recommended for You</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container mb-6 overflow-hidden border border-outline-variant">
+<img alt="Cybersecurity abstraction" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" data-alt="A clean, abstract architectural shot showing repeating patterns of glass and steel in a high-rise data center. The lighting is incredibly crisp, emphasizing the sharp lines and sterile environment. The image uses a stark high-contrast style with deep blacks and clinical whites, reflecting a mood of security, order, and high-performance engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgGkuwd2S4aUCGxwwACLl8KbNes6HSJIH5aXJPt7mqEn5OmK1sOSL1cFqqn_Xz8iiTTNHESAxG57HggiRO1kGehQCnsvmB5ui7r6bqbrn1BLFyxCl7vdUQ3orPJWI6qTPsGmQSnCvmWhQ-04s2sCvgOyzi91U_FeNKyTQA-oq4DNZ9-wqVBP0d30Gi9Mka6FsfLOXmI65oH9rX3SaguAf6SpVD9B71mJu8Otbf8MvNDQclCYJX4YvrhFB_yhRTgiqBKDXYwOxqsEVv">
+</div>
+<span class="font-label-bold text-label-sm text-secondary uppercase mb-2 block">Performance</span>
+<h3 class="font-headline-lg-mobile text-[24px] leading-tight mb-4 group-hover:underline underline-offset-4 decoration-1">Optimizing Rust for WASM Environments</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">How we achieved 60fps in complex data visualizations using memory-safe systems programming.</p>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container mb-6 overflow-hidden border border-outline-variant">
+<img alt="Semiconductor circuits" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" data-alt="A macroscopic view of a modern semiconductor wafer, showing the mesmerizing, repetitive geometric patterns of micro-circuits. The visual style is highly technical and detailed, with lighting that creates a subtle metallic sheen across the surface. The color palette is restricted to silvery metallics and deep charcoal shadows, conveying a sense of microscopic precision and advanced manufacturing technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_ld_PlrkXpgEZ7d-sTfra1nrGSHSVHK40V0jVC-4G26wBdH21SRqioLoefENVAiFEUJ_o9L6TkPGeAcrWgOqvGFOEZDqqTthq_IdIFC1QSaEE3K-jq8TSzWaBk1ZWbh-sJv9tWTZAS_UjIyy6DYRORDzMMCWRcURYv51eZ41-phE_GP_c1tc7WJXszux2glUdgYV_R0IZlwufRzPhW4j3YyDNoqnFkAgzpZ3HbS_TneREDmvHtqThdYQsyphJaER1Gvqa204Yh4th">
+</div>
+<span class="font-label-bold text-label-sm text-secondary uppercase mb-2 block">Hardware</span>
+<h3 class="font-headline-lg-mobile text-[24px] leading-tight mb-4 group-hover:underline underline-offset-4 decoration-1">The Evolution of Unified Memory Architectures</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">Understanding how modern silicon is breaking the bottleneck between CPU and GPU tasks.</p>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video bg-surface-container mb-6 overflow-hidden border border-outline-variant">
+<img alt="Mathematics and equations" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" data-alt="An elegant, minimalist composition of handwritten mathematical formulas on a clean white surface, partially obscured by a soft shadows cast by an unseen window frame. The aesthetic is scholarly and refined, with a focus on intellectual clarity. The lighting is natural and diffuse, creating a calm and contemplative mood that emphasizes the foundational role of mathematics in engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWecis__NZAj5jgmZXWfW2DtFUVqvK3Wm__S-ZLjq7pa5mBqiw5ATyPXbMOxpuMT5MR_1wFzyLAIO1W-kfHEf3ytjvTpAcGvTdX2I29pN-buPBHXdIlb-qemRAEByA7HnCUmQ7suOSj2VnezrpcJzxLyYwJWVDSnapXaZQD6_sqZxgEs4KSADYc6zPjfv0vurohzk0VvK7QVrMmP41ZXiy6Glqy2G7haHf5-W0Z-cMEUebAeG-EOI8BCrDxs3DBQNt3DSgmBdxps5">
+</div>
+<span class="font-label-bold text-label-sm text-secondary uppercase mb-2 block">Mathematics</span>
+<h3 class="font-headline-lg-mobile text-[24px] leading-tight mb-4 group-hover:underline underline-offset-4 decoration-1">Linear Algebra for 3D Engine Development</h3>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">A deep dive into the matrices and transformations that power modern real-time rendering.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="font-label-bold text-label-bold text-primary mb-6 md:mb-0">PORTFOLIO</div>
+<div class="font-label-sm text-label-sm text-secondary mb-6 md:mb-0">© 2024 PORTFOLIO. All rights reserved.</div>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-secondary hover:underline transition-all" href="#">LinkedIn</a>
+<a class="font-label-sm text-label-sm text-secondary hover:underline transition-all" href="#">GitHub</a>
+<a class="font-label-sm text-label-sm text-secondary hover:underline transition-all" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Layer for Progress Bar -->
+<div class="fixed top-20 left-0 h-1 bg-primary z-[60] transition-all duration-75" id="scroll-progress" style="width: 0%;"></div>
+<script>
+        // Micro-interaction: Reading Progress Bar
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        };
+
+        // Subtle parallax/reveal effect for images
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('article, aside, section').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

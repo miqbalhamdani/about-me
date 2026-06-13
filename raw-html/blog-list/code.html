@@ -1,0 +1,283 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Monolith Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dadada",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-secondary-container": "#626262",
+                    "on-surface-variant": "#4c4546",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "secondary-container": "#e1dfdf",
+                    "primary": "#000000",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-variant": "#e2e2e2",
+                    "surface-tint": "#5e5e5e",
+                    "secondary": "#5e5e5e",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-container": "#838484",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-primary": "#c6c6c6",
+                    "tertiary-container": "#1a1c1c",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-container-low": "#f3f3f4",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1b1b1b",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-primary-container": "#848484",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "inverse-surface": "#2f3131",
+                    "outline": "#7e7576",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "on-surface": "#1a1c1c",
+                    "outline-variant": "#cfc4c5",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "on-background": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f1f1",
+                    "background": "#f9f9f9",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "max-width": "1200px",
+                    "margin-desktop": "80px",
+                    "element-gap": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Inter"],
+                    "display-xl-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-xl": ["Inter"]
+            },
+            "fontSize": {
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                    "body-lg": ["20px", {"lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+                    "display-xl": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-primary font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<nav class="bg-surface text-primary font-body-md text-body-md border-b border-outline-variant w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-20">
+<!-- Logo -->
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary" href="#">Monolith</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8 h-full">
+<a class="h-full flex items-center text-primary font-bold border-b-2 border-primary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Articles</a>
+<a class="h-full flex items-center text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">About</a>
+<a class="h-full flex items-center text-secondary hover:text-primary transition-colors duration-200 cursor-pointer" href="#">Resources</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-bold text-label-bold uppercase tracking-widest hover:bg-inverse-surface transition-colors">
+                    Download CV
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<!-- Grid Layout for Editorial Feel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left/Main Column: Article Feed -->
+<div class="lg:col-span-8 flex flex-col">
+<!-- Tag Filter -->
+<div class="flex gap-6 overflow-x-auto border-b border-outline-variant pb-4 mb-element-gap no-scrollbar">
+<button class="whitespace-nowrap font-label-bold text-label-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1">All</button>
+<button class="whitespace-nowrap font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors pb-1">Engineering</button>
+<button class="whitespace-nowrap font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors pb-1">Design</button>
+<button class="whitespace-nowrap font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors pb-1">Productivity</button>
+</div>
+<!-- Articles List -->
+<div class="flex flex-col gap-element-gap">
+<!-- Article 1 -->
+<article class="flex flex-col md:flex-row gap-8 border-b border-outline-variant pb-element-gap group">
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary mb-3">
+<span>Oct 24, 2024</span>
+<span>·</span>
+<span>8 min read</span>
+<span>·</span>
+<span class="bg-surface-container px-2 py-0.5 font-label-bold text-primary uppercase text-[10px] tracking-wider">Engineering</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary group-hover:underline cursor-pointer mb-4">
+                                Building Scalable UI Systems
+                            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant line-clamp-2 mb-4">
+                                Discover the architectural decisions and robust mental models required to construct interface design systems that can seamlessly scale across hundreds of products without fracturing identity.
+                            </p>
+<div class="mt-auto">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary hover:text-secondary flex items-center gap-1 w-max" href="#">
+                                    Read Article <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="w-full md:w-64 h-48 md:h-full bg-surface-container-high shrink-0 overflow-hidden relative border border-outline-variant">
+<img alt="Scalable UI Systems" class="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated, high-contrast abstract digital artwork representing a highly organized, scalable user interface system. The composition features sharp geometric lines, intersecting grids, and minimal glowing nodes on a stark, pure white background. The lighting is crisp and even, evoking a sense of pristine modern engineering and structured architecture. The mood is highly intellectual, precise, and visually striking in its minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmcX9dqveSVqMucxsu9pGGNnGTrc1O5cAL-GhY2r48788AiqEi3wFsjqbEhPCcsVeY9u61M-EBufzp0Y-JfdzZVMFsdtxwiyaJjKJAPEPSrwiIw7ksARtocifjdCnkA1nArCHASeo9STb8UH_xm7hCE3doBkkp83qv8oXn2ZEa97kerPcmG_cQ3LJwOnbO5vmnLNTqDCp2ANXD70p5Ns6jwfWjSpgQcbm7SRmA2u_OKqgvRpXFyjOU81Vli57IlSS3su1kQHf64UwA">
+</div>
+</article>
+<!-- Article 2 -->
+<article class="flex flex-col md:flex-row gap-8 border-b border-outline-variant pb-element-gap group">
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary mb-3">
+<span>Oct 18, 2024</span>
+<span>·</span>
+<span>12 min read</span>
+<span>·</span>
+<span class="bg-surface-container px-2 py-0.5 font-label-bold text-primary uppercase text-[10px] tracking-wider">Engineering</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary group-hover:underline cursor-pointer mb-4">
+                                The Future of WebGPU
+                            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant line-clamp-2 mb-4">
+                                An in-depth exploration of how the new WebGPU API is fundamentally transforming rendering paradigms, unlocking unprecedented computational capabilities directly within the browser ecosystem.
+                            </p>
+<div class="mt-auto">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary hover:text-secondary flex items-center gap-1 w-max" href="#">
+                                    Read Article <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="w-full md:w-64 h-48 md:h-full bg-surface-container-high shrink-0 overflow-hidden relative border border-outline-variant">
+<img alt="WebGPU Future" class="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic, minimalist 3D rendering symbolizing advanced graphics processing and WebGPU technology. Floating, crystalline polygons and smooth metallic spheres are suspended in a bright, light-filled void. High-key lighting with subtle reflections emphasizes the polished surfaces and computational power. The aesthetic is clean, technical, and hyper-modern, relying on a palette of pure whites, silvers, and deep blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3BP_nSzuOIy9T49eHNGyJaMqdd0PAE1DRWXV_4GIRlm3M0XiFc5dNsbJCzGKZ0BzT6FJkRJbaVQ6nzo0Ja2zF5-pI4DSKHFGVVr3KX4LrC4AhhdYmxtNIP4jK4k8Qz_Hjp3KBlaOlZljGHtSSLvylJF6iOtt6fgcR5caW5Sj5f5DhVq6IsJeWKM218o-voxmKaP_E5d4lJUZSqNdiGZuyMH46vW4LeFr5pIqnPG9HTRdfoLSM9NNmTZ8wteAhbhsM-xNWZ3adA4Um">
+</div>
+</article>
+<!-- Article 3 -->
+<article class="flex flex-col md:flex-row gap-8 pb-element-gap group">
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary mb-3">
+<span>Sep 30, 2024</span>
+<span>·</span>
+<span>6 min read</span>
+<span>·</span>
+<span class="bg-surface-container px-2 py-0.5 font-label-bold text-primary uppercase text-[10px] tracking-wider">Leadership</span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary group-hover:underline cursor-pointer mb-4">
+                                Engineering Leadership at Scale
+                            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant line-clamp-2 mb-4">
+                                Navigating the complex transition from managing individual contributors to orchestrating high-performing engineering organizations. Strategies for maintaining velocity without sacrificing code quality.
+                            </p>
+<div class="mt-auto">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary hover:text-secondary flex items-center gap-1 w-max" href="#">
+                                    Read Article <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="w-full md:w-64 h-48 md:h-full bg-surface-container-high shrink-0 overflow-hidden relative border border-outline-variant">
+<img alt="Engineering Leadership" class="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="A conceptual, minimalist photograph representing leadership and scale in a corporate engineering environment. A perfectly aligned row of sleek, black metallic monoliths stands against a vast, bright white architectural background. Soft, diffused daylight casts subtle gradients across the smooth surfaces. The scene conveys authority, structural integrity, and calm organizational power without any human figures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALDe73_u5A_4rlGtXkF3zPKgc-qOxp15eX-p3prhsXM6BD28xppmpVJaYfqW1wHQmepCshikR2PM3cWIcIo3W7BN8qx94ZVB8AqdkFlPWxe3slTJqgr78uJGfvxZzD0R85hYATabjl3AGGqWgkpo5WkjYEA7YrQNHBnEnSiCg_3wkAvCz2q2NxRjjz-VhWPpSi0GpHKBmXHaoBvFHwLFhpIp6x0wUIgwyWVUEoKKPg1sN5PzOmid9t7MOVr3b8-FR-Zume4u_uVfGS">
+</div>
+</article>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="hidden lg:block lg:col-span-4 pl-12 border-l border-outline-variant">
+<div class="sticky top-32">
+<h3 class="font-label-bold text-label-bold uppercase tracking-widest text-primary mb-6 flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full block"></span>
+                        Recommended for you
+                    </h3>
+<div class="flex flex-col gap-8">
+<!-- Recommendation 1 -->
+<div class="group cursor-pointer">
+<div class="font-label-sm text-label-sm text-secondary mb-1">Productivity · 4 min read</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary leading-tight group-hover:underline mb-2">
+                                The Minimalist Desk Setup
+                            </h4>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">How reducing physical clutter directly translates to lower cognitive overhead.</p>
+</div>
+<!-- Recommendation 2 -->
+<div class="group cursor-pointer">
+<div class="font-label-sm text-label-sm text-secondary mb-1">Design · 7 min read</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary leading-tight group-hover:underline mb-2">
+                                Typography as Architecture
+                            </h4>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">Treating letterforms not merely as text, but as load-bearing structures in digital layouts.</p>
+</div>
+<!-- Recommendation 3 -->
+<div class="group cursor-pointer">
+<div class="font-label-sm text-label-sm text-secondary mb-1">Engineering · 5 min read</div>
+<h4 class="font-body-lg text-body-lg font-semibold text-primary leading-tight group-hover:underline mb-2">
+                                Deprecating Legacy Systems
+                            </h4>
+<p class="font-body-md text-body-md text-secondary line-clamp-2">A graceful approach to retiring old codebases without causing organizational panic.</p>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant flex flex-wrap gap-x-4 gap-y-2">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Help</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Status</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Writers</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Blog</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface text-primary font-label-sm text-label-sm border-t border-outline-variant w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-element-gap max-w-max-width mx-auto">
+<div class="font-label-bold text-label-bold uppercase tracking-widest text-primary mb-4 md:mb-0">
+                © 2024 Monolith Editorial. All rights reserved.
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-secondary hover:text-primary hover:underline transition-opacity duration-200" href="#">RSS Feed</a>
+<a class="text-secondary hover:text-primary hover:underline transition-opacity duration-200" href="#">Twitter</a>
+<a class="text-secondary hover:text-primary hover:underline transition-opacity duration-200" href="#">GitHub</a>
+<a class="text-secondary hover:text-primary hover:underline transition-opacity duration-200" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>
