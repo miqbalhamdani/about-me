@@ -14,15 +14,20 @@ Default workflow:
 3. Discuss the angle with the user.
 4. Create or revise the final draft.
 5. Create a cover image prompt.
-6. Show changed files and git diff.
-7. Commit only after explicit approval.
-8. Push only after explicit approval.
+6. Create a new branch for the article.
+7. Show changed files and git diff.
+8. Commit only after explicit approval.
+9. Push the branch to the remote repository.
+10. Create a Pull Request (PR) to `main`.
+11. Send the PR link to the user.
 
 Rules:
 - Work on one article/topic per session.
+- Always work on a separate branch, not directly on `main`.
 - Do not mix context from unrelated articles.
 - Do not overwrite files without showing the diff.
 - Do not commit unless the user says "commit approved".
 - Do not push unless the user says "push approved".
+- If `gh` is not authenticated, provide the manual PR creation link.
 
 The repository location is in ~/about-me
