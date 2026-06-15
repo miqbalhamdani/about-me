@@ -34,6 +34,8 @@ Edit:
 nano ~/.ssh/config
 ```
 
+![](/blog/multiple-git-accounts/ssh-config.png)
+
 Add:
 ```text
 Host github.com
