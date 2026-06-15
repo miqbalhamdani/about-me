@@ -17,7 +17,9 @@ Default workflow:
 6. Create a new branch for the article.
 7. Show changed files and git diff.
 8. Commit only after explicit approval.
-9. Push and create a Pull Request to `main` only after explicit approval.
+9. Push the branch to the remote repository.
+10. Create a Pull Request (PR) to `main`.
+11. Send the PR link to the user.
 
 Rules:
 - Work on one article/topic per session.
@@ -26,5 +28,6 @@ Rules:
 - Do not overwrite files without showing the diff.
 - Do not commit unless the user says "commit approved".
 - Do not push unless the user says "push approved".
+- If `gh` is not authenticated, provide the manual PR creation link.
 
 The repository location is in ~/about-me
