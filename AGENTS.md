@@ -14,12 +14,14 @@ Default workflow:
 3. Discuss the angle with the user.
 4. Create or revise the final draft.
 5. Create a cover image prompt.
-6. Show changed files and git diff.
-7. Commit only after explicit approval.
-8. Push only after explicit approval.
+6. Create a new branch for the article.
+7. Show changed files and git diff.
+8. Commit only after explicit approval.
+9. Push and create a Pull Request to `main` only after explicit approval.
 
 Rules:
 - Work on one article/topic per session.
+- Always work on a separate branch, not directly on `main`.
 - Do not mix context from unrelated articles.
 - Do not overwrite files without showing the diff.
 - Do not commit unless the user says "commit approved".
