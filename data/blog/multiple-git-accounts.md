@@ -98,6 +98,10 @@ gpg --full-generate-key
 
 ## 3. List keys
 
+![](/blog/multiple-git-accounts/list-keys.png)
+
+
+
 ```bash
 gpg --list-secret-keys --keyid-format=long
 ```
@@ -119,6 +123,10 @@ uid   [ultimate] user-gitlab@mail.com
 
 ## 4. Export public keys
 
+![](/blog/multiple-git-accounts/export-keys.png)
+
+
+
 ```bash
 gpg --armor --export ABC1234567890
 gpg --armor --export XYZ9876543210
@@ -127,6 +135,10 @@ gpg --armor --export XYZ9876543210
 ## 5. Add to platforms
 
 * GitHub → Settings → GPG Keys
+
+![](/blog/multiple-git-accounts/github-gpg.png)
+
+
 * GitLab → Preferences → GPG Keys
 
 ---
@@ -165,6 +177,10 @@ nano ~/.gitconfig-gitlab
 
 ## 2. Setup auto switching
 
+![](/blog/multiple-git-accounts/conditional-include.png)
+
+
+
 Edit main config:
 ```bash
 nano ~/.gitconfig
@@ -180,6 +196,10 @@ Add:
 ```
 
 My Folder Structure
+
+![](/blog/multiple-git-accounts/folder-structure.png)
+
+
 ```text
 ~
 |-- escape/
@@ -192,6 +212,10 @@ My Folder Structure
 
 ## 3. Verify
 
+![](/blog/multiple-git-accounts/verify-config.png)
+
+
+
 Inside repo:
 ```bash
 git config user.email
@@ -199,6 +223,10 @@ git config user.signingkey
 ```
 
 ## 4. Activate (Important ⚠️)
+
+![](/blog/multiple-git-accounts/enable-signing.png)
+
+
 
 ```bash
 git config --global commit.gpgsign true
