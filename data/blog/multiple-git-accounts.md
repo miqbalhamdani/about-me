@@ -34,8 +34,6 @@ Edit:
 nano ~/.ssh/config
 ```
 
-![](/blog/multiple-git-accounts/ssh-config.png)
-
 Add:
 ```text
 Host github.com
@@ -50,6 +48,8 @@ Host gitlab.com
   IdentityFile ~/.ssh/id_ed25519_gitlab
   IdentitiesOnly yes
 ```
+
+![](/blog/multiple-git-accounts/ssh-config.png)
 
 ## 4. Add public keys to platforms
 
@@ -98,10 +98,6 @@ gpg --full-generate-key
 
 ## 3. List keys
 
-![](/blog/multiple-git-accounts/list-keys.png)
-
-
-
 ```bash
 gpg --list-secret-keys --keyid-format=long
 ```
@@ -115,6 +111,8 @@ sec   rsa4096/XYZ9876543210
 uid   [ultimate] user-gitlab@mail.com
 ```
 
+![](/blog/multiple-git-accounts/list-keys.png)
+
 👉 Save both KEY IDs:
 * GitHub → `ABC1234567890`
 * GitLab → `XYZ9876543210` 
@@ -123,23 +121,19 @@ uid   [ultimate] user-gitlab@mail.com
 
 ## 4. Export public keys
 
-![](/blog/multiple-git-accounts/export-keys.png)
-
-
-
 ```bash
 gpg --armor --export ABC1234567890
 gpg --armor --export XYZ9876543210
 ```
 
+![](/blog/multiple-git-accounts/export-keys.png)
+
 ## 5. Add to platforms
 
 * GitHub → Settings → GPG Keys
+* GitLab → Preferences → GPG Keys
 
 ![](/blog/multiple-git-accounts/github-gpg.png)
-
-
-* GitLab → Preferences → GPG Keys
 
 ---
 
@@ -177,10 +171,6 @@ nano ~/.gitconfig-gitlab
 
 ## 2. Setup auto switching
 
-![](/blog/multiple-git-accounts/conditional-include.png)
-
-
-
 Edit main config:
 ```bash
 nano ~/.gitconfig
@@ -195,11 +185,9 @@ Add:
   path = ~/.gitconfig-gitlab
 ```
 
+![](/blog/multiple-git-accounts/conditional-include.png)
+
 My Folder Structure
-
-![](/blog/multiple-git-accounts/folder-structure.png)
-
-
 ```text
 ~
 |-- escape/
@@ -210,11 +198,9 @@ My Folder Structure
 |   |-- repository_d
 ```
 
+![](/blog/multiple-git-accounts/folder-structure.png)
+
 ## 3. Verify
-
-![](/blog/multiple-git-accounts/verify-config.png)
-
-
 
 Inside repo:
 ```bash
@@ -222,12 +208,12 @@ git config user.email
 git config user.signingkey
 ```
 
+![](/blog/multiple-git-accounts/verify-config.png)
+
 ## 4. Activate (Important ⚠️)
-
-![](/blog/multiple-git-accounts/enable-signing.png)
-
-
 
 ```bash
 git config --global commit.gpgsign true
 ```
+
+![](/blog/multiple-git-accounts/enable-signing.png)
