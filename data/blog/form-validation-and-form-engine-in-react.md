@@ -73,49 +73,65 @@ In my project, I use:
 
 ### ⚡ 1. High Performance (Less Re-render)
 
-- **React Hook Form**
-  - Uses uncontrolled inputs
-  - Minimal re-render
-  - Can reduce re-renders by **~60–90%**
-- **Formik**
-  - Uses controlled inputs
-  - More frequent re-render
-  - Slower on large forms
+### React Hook Form
+
+- Uses uncontrolled inputs
+- Minimal re-render
+- Can reduce re-renders by **~60–90%**
+
+### Formik
+
+- Uses controlled inputs
+- More frequent re-render
+- Slower on large forms
 
 ### 📦 2. Bundle Size Comparison
 
-#### Validation Libraries
+### Validation Libraries
 
-- **Valibot**
-  - ~2–4 KB (min+gzip)
-  - Very lightweight
-- **Zod**
-  - ~20–30 KB
-  - ~10x bigger than Valibot
-- **Yup**
-  - ~24–30 KB
-  - ~10–15x bigger than Valibot
+### Valibot
 
-#### Form Libraries
+- ~2–4 KB (min+gzip)
+- Very lightweight
 
-- **React Hook Form**
-  - ~8–10 KB
-  - Lightweight
-- **Formik**
-  - ~13–15 KB
-  - Bigger and heavier
+### Zod
+
+- ~20–30 KB
+- ~10x bigger than Valibot
+
+### Yup
+
+- ~24–30 KB
+- ~10–15x bigger than Valibot
+
+### Form Libraries
+
+### React Hook Form
+
+- ~8–10 KB
+- Lightweight
+
+### Formik
+
+- ~13–15 KB
+- Bigger and heavier
 
 ### 🚀 3. Performance (Validation Speed)
 
-- **Valibot**
-  - Fastest
-  - Functional pipeline → efficient execution
-- **Zod**
-  - Fast
-  - Balanced performance
-- **Yup**
-  - Slower
-  - More overhead
+### Valibot
+
+- Fastest
+- Functional pipeline → efficient execution
+
+### Zod
+
+- Fast
+- Balanced performance
+
+### Yup
+
+- Slower
+- More overhead
 
 ## 💻 Example: React Hook Form + Valibot
 
