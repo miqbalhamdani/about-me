@@ -11,7 +11,7 @@ coverAlt: Complete Guide: Multiple Git Accounts with SSH, GPG, and Verified Comm
 featured: false
 ---
 
-# 🔐 PART 1 — Generate 2 SSH Keys (Access)
+## 🔐 PART 1: Generate 2 SSH Keys (Access)
 
 ## 1. Generate GitHub SSH key
 
@@ -24,8 +24,6 @@ ssh-keygen -t ed25519 -C "user-github@mail.com" -f ~/.ssh/id_ed25519_github
 ```bash
 ssh-keygen -t ed25519 -C "user-gitlab@mail.com" -f ~/.ssh/id_ed25519_gitlab
 ```
-
----
 
 ## 3. Add SSH config
 
@@ -63,8 +61,6 @@ Add to:
 * GitHub → Settings → SSH Keys
 * GitLab → Preferences → SSH Keys
 
----
-
 ## 5. Test connection
 
 ```bash
@@ -72,7 +68,7 @@ ssh -T git@github.com
 ssh -T git@gitlab.com
 ```
 
-# ✍️ PART 2 — Generate 2 GPG Keys (Signing)
+## ✍️ PART 2: Generate 2 GPG Keys (Signing)
 
 ## 1. Generate GitHub GPG key
 
@@ -84,8 +80,6 @@ Choose:
 * Type: RSA and RSA
 * Key size: 4096
 * Email: same as GitHub email
-
----
 
 ## 2. Generate GitLab GPG key
 
@@ -117,8 +111,6 @@ uid   [ultimate] user-gitlab@mail.com
 * GitHub → `ABC1234567890`
 * GitLab → `XYZ9876543210` 
 
----
-
 ## 4. Export public keys
 
 ```bash
@@ -135,11 +127,7 @@ gpg --armor --export XYZ9876543210
 
 ![](/blog/multiple-git-accounts/github-gpg.png)
 
----
-
-# ⚙️ PART 3 — Git Config Per Workspace (IMPORTANT)
-
----
+## ⚙️ PART 3: Git Config Per Workspace (IMPORTANT)
 
 ## 1. Create separate config files
 
@@ -154,8 +142,6 @@ nano ~/.gitconfig-github
   signingkey = ABC1234567890
 ```
 
----
-
 GitLab config
 ```bash
 nano ~/.gitconfig-gitlab
@@ -166,8 +152,6 @@ nano ~/.gitconfig-gitlab
   email = user-gitlab@mail.com
   signingkey = XYZ9876543210
 ```
-
----
 
 ## 2. Setup auto switching
 
