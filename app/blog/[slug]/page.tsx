@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BlogPostViewEvent, ShareLinks } from "@/components/blog/blog-analytics";
 import { MaterialIcon } from "@/components/shared/material-icon";
 import {
   formatBlogDate,
@@ -10,7 +11,7 @@ import {
   getRecommendedBlogPosts,
   renderMarkdown,
 } from "@/lib/blog";
-import { siteConfig } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const revalidate = 86400;
 
@@ -82,6 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="mx-auto w-full max-w-max-width px-margin-mobile py-section-gap md:px-margin-desktop">
+      <BlogPostViewEvent slug={post.slug} category={post.category} />
       <Link className="mb-12 flex w-max items-center gap-2 font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary" href="/blog">
         <MaterialIcon icon="arrow_back" className="text-[16px]" />
         Articles
@@ -144,33 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="sticky top-32 flex flex-col gap-6">
             <div>
               <p className="mb-4 font-label-bold text-label-sm uppercase tracking-widest text-secondary">Share Article</p>
-              <div className="flex flex-col gap-2">
-                <a
-                  className="flex items-center gap-3 border border-outline-variant px-4 py-2 font-label-bold text-label-bold transition-colors hover:bg-primary hover:text-on-primary"
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`/blog/${post.slug}`)}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <MaterialIcon icon="description" className="text-[18px]" />
-                  LinkedIn
-                </a>
-                <a
-                  className="flex items-center gap-3 border border-outline-variant px-4 py-2 font-label-bold text-label-bold transition-colors hover:bg-primary hover:text-on-primary"
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <MaterialIcon icon="alternate_email" className="text-[18px]" />
-                  Twitter
-                </a>
-                <Link
-                  className="flex items-center gap-3 border border-outline-variant px-4 py-2 font-label-bold text-label-bold transition-colors hover:bg-primary hover:text-on-primary"
-                  href={`/blog/${post.slug}`}
-                >
-                  <MaterialIcon icon="link" className="text-[18px]" />
-                  Copy Link
-                </Link>
-              </div>
+              <ShareLinks slug={post.slug} title={post.title} url={absoluteUrl(`/blog/${post.slug}`)} />
             </div>
 
             {/* <div className="mt-8">

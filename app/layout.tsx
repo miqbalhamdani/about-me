@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { TopNav } from "@/components/shared/top-nav";
 import { getSiteUrl, siteConfig } from "@/lib/site";
@@ -9,6 +10,8 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -52,6 +55,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
       </body>
+      {gaMeasurementId && <GoogleAnalytics gaId={gaMeasurementId} />}
     </html>
   );
 }
