@@ -70,14 +70,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const recommendedPosts = await getRecommendedBlogPosts(post.slug, 3);
   const content = await renderMarkdown(post.content);
   const author = { "@type": "Person", name: siteConfig.name, url: absoluteUrl("/") };
+  const date = `${post.date}T00:00:00Z`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     image: absoluteUrl(post.coverImage),
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: date,
+    dateModified: date,
     keywords: post.tags,
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
     author,
