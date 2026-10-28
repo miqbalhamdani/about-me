@@ -25,10 +25,10 @@ export const siteConfig = {
   email: "iqbalhamdani27@gmail.com",
   role: "Senior Frontend Engineer",
   defaultOgImage: {
-    url: "/icon",
-    width: 32,
-    height: 32,
-    alt: "Iqbal Hamdani IH monogram icon",
+    url: "/opengraph-image",
+    width: 1200,
+    height: 630,
+    alt: "Iqbal Hamdani, Senior Frontend Engineer",
   },
 } as const;
 
@@ -55,5 +55,5 @@ export function absoluteUrl(path = "/"): string {
 export function getProfileLinks(): string[] {
   return homepageContent.footer.links
     .map((link) => link.href)
-    .filter((href) => href.startsWith("https://"));
+    .filter((href) => href.startsWith("https://") && !href.startsWith("https://wa.me/"));
 }

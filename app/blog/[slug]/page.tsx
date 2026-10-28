@@ -38,15 +38,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   const postPath = `/blog/${post.slug}`;
-  const image = {
-    url: post.coverImage,
-    width: 1600,
-    height: 900,
-    alt: post.coverAlt,
-  };
+  const title = post.seoTitle ?? post.title;
 
   return {
-    title: post.title,
+    title,
     description: post.description,
     alternates: {
       canonical: postPath,
@@ -55,17 +50,11 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       type: "article",
       url: postPath,
       siteName: siteConfig.name,
-      title: `${post.title} | ${siteConfig.name}`,
+      title: `${title} | ${siteConfig.name}`,
       description: post.description,
       publishedTime: post.date,
       tags: post.tags,
-      images: [image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | ${siteConfig.name}`,
-      description: post.description,
-      images: [post.coverImage],
+      images: [{ url: post.coverImage, alt: post.coverAlt }],
     },
   };
 }
@@ -80,9 +69,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const recommendedPosts = await getRecommendedBlogPosts(post.slug, 3);
   const content = await renderMarkdown(post.content);
+  const author = { "@type": "Person", name: siteConfig.name, url: absoluteUrl("/") };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: absoluteUrl(post.coverImage),
+    datePublished: post.date,
+    dateModified: post.date,
+    keywords: post.tags,
+    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
+    author,
+    publisher: author,
+  };
 
   return (
     <main className="mx-auto w-full max-w-max-width px-margin-mobile py-section-gap md:px-margin-desktop">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <BlogPostViewEvent slug={post.slug} category={post.category} />
       <Link className="mb-12 flex w-max items-center gap-2 font-label-bold text-label-bold uppercase tracking-widest text-secondary hover:text-primary" href="/blog">
         <MaterialIcon icon="arrow_back" className="text-[16px]" />
@@ -108,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               alt={post.coverAlt}
               className="object-cover grayscale transition-all duration-700 hover:grayscale-0"
               fill
-              priority
+              preload
               sizes="(min-width: 1024px) 760px, 100vw"
               src={post.coverImage}
             />

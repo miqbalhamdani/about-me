@@ -1,6 +1,7 @@
 ---
 slug: form-validation-and-form-engine-in-react
 title: Understanding Form Validation vs Form Engine in React (Next.js)
+seoTitle: "Form Validation vs Form Engine in React"
 description: Understand the difference between validation rules and form engines in React and learn why React Hook Form with Valibot is a lightweight, performant stack.
 date: 2026-04-16
 readTime: 6 min read

@@ -14,7 +14,7 @@ export function ProjectOverviewImage({ heroAlt, heroImage }: ProjectOverviewImag
             alt={heroAlt}
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
             fill
-            priority
+            preload
             sizes="(min-width: 1200px) 1200px, 100vw"
             src={heroImage}
           />

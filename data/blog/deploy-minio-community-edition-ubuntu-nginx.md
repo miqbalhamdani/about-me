@@ -1,12 +1,13 @@
 ---
 slug: deploy-minio-community-edition-ubuntu-nginx
 title: Deploy MinIO Community Edition on Ubuntu with NGINX and HTTPS
-description: Build the archived MinIO Community Edition from pinned source, run it as a hardened systemd service, and expose separate S3 and console domains through NGINX and Let's Encrypt.
+seoTitle: "Deploy MinIO on Ubuntu with NGINX and HTTPS"
+description: Build MinIO Community Edition from pinned source, run it as a hardened systemd service, and serve S3 and console domains through NGINX and Let's Encrypt.
 date: 2026-07-18
 readTime: 15 min read
 category: DevOps
 tags: [minio, s3, ubuntu, nginx, lets-encrypt, systemd, object-storage]
-coverImage: /blog/deploy-minio-community-edition-ubuntu-nginx/cover.svg
+coverImage: /blog/deploy-minio-community-edition-ubuntu-nginx/cover.png
 coverAlt: Architecture diagram showing MinIO behind an NGINX TLS gateway on an Ubuntu server
 featured: true
 ---

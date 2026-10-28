@@ -1,12 +1,13 @@
 ---
 slug: ssr-vs-ssg-vs-isr-rendering-strategies
 title: SSR vs SSG vs ISR: Understanding Rendering Strategies in Modern JavaScript Frameworks
-description: Learn how SSR, SSG, and ISR work, how they differ in freshness and server cost, and how to choose the right strategy for each page in a modern JavaScript application.
+seoTitle: "SSR vs SSG vs ISR: Which Rendering Strategy?"
+description: Learn how SSR, SSG, and ISR work, how they differ in freshness and server cost, and how to pick the right rendering strategy for each page.
 date: 2026-07-13
 readTime: 9 min read
 category: Engineering
 tags: [nextjs, nuxt, sveltekit, astro, rendering, performance]
-coverImage: /blog/ssr-vs-ssg-vs-isr-rendering-strategies/cover.svg
+coverImage: /blog/ssr-vs-ssg-vs-isr-rendering-strategies/cover.png
 coverAlt: A visual comparison of server-side rendering, static site generation, and incremental static regeneration.
 featured: false
 ---

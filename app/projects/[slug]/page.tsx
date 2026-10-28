@@ -36,13 +36,6 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   const projectPath = `/projects/${project.slug}`;
-  const image = {
-    url: project.coverImage,
-    width: 3158,
-    height: 1942,
-    alt: project.coverAlt,
-  };
-
   return {
     title: project.title,
     description: project.subtitle,
@@ -55,13 +48,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       siteName: siteConfig.name,
       title: `${project.title} | ${siteConfig.name}`,
       description: project.subtitle,
-      images: [image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${project.title} | ${siteConfig.name}`,
-      description: project.subtitle,
-      images: [project.coverImage],
+      images: [{ url: project.coverImage, alt: project.coverAlt }],
     },
   };
 }

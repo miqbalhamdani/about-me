@@ -1,7 +1,8 @@
 ---
 slug: custom-domain-in-vercel-with-hostinger
 title: Custom Domain in Vercel (2026 Guide)
-description: How to Connect a Custom Domain in Vercel with Hostinger (Step-by-Step Guide)
+seoTitle: "Connect a Hostinger Domain to Vercel (2026)"
+description: Step-by-step guide to connecting a Hostinger domain to Vercel: add the domain in Vercel, point Hostinger nameservers to Vercel DNS, and verify the setup.
 date: 2026-03-19
 readTime: 8 min read
 category: Engineering

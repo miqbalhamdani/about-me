@@ -109,6 +109,7 @@ function parseFrontmatter(raw: string): { meta: BlogPostMeta; content: string } 
       tags: data.tags,
       coverImage: getString("coverImage"),
       coverAlt: getString("coverAlt"),
+      seoTitle: typeof data.seoTitle === "string" && data.seoTitle ? data.seoTitle : undefined,
       featured: typeof data.featured === "boolean" ? data.featured : false,
     },
     content: raw.slice(match[0].length).trim(),

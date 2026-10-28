@@ -1,12 +1,13 @@
 ---
 slug: multiple-git-accounts
 title: "Complete Guide: Multiple Git Accounts with SSH, GPG, and Verified Commits"
+seoTitle: "Multiple Git Accounts with SSH and GPG"
 description: Learn how to manage multiple Git accounts on a single machine using SSH keys, GPG signing, and conditional Git configurations.
 date: 2026-03-16
 readTime: 10 min read
 category: Web Development
 tags: [git, ssh, gpg, github, gitlab, guide]
-coverImage: /blog/multiple-git-accounts/cover.webp
+coverImage: /blog/multiple-git-accounts/cover.png
 coverAlt: Complete Guide: Multiple Git Accounts with SSH, GPG, and Verified Commits
 featured: false
 ---

@@ -112,6 +112,7 @@ export type ProjectSummary = {
 export type BlogPostMeta = {
   slug: string;
   title: string;
+  seoTitle?: string;
   description: string;
   date: string;
   readTime: string;

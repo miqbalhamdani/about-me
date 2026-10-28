@@ -6,9 +6,12 @@ import { formatShortBlogDate, getAllBlogPosts, getBlogCategories } from "@/lib/b
 import type { BlogPostMeta } from "@/lib/content-types";
 import { siteConfig } from "@/lib/site";
 
+const description =
+  "Articles by Iqbal Hamdani on frontend engineering and DevOps: Next.js rendering, React forms, Git workflows, Vercel domains, and self-hosted MinIO.";
+
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Engineering, product, and interface notes from Iqbal Hamdani.",
+  description,
   alternates: {
     canonical: "/blog",
   },
@@ -17,7 +20,8 @@ export const metadata: Metadata = {
     url: "/blog",
     siteName: siteConfig.name,
     title: `Blog | ${siteConfig.name}`,
-    description: "Engineering, product, and interface notes from Iqbal Hamdani.",
+    description,
+    images: [siteConfig.defaultOgImage],
   },
 };
 
@@ -99,6 +103,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 className={imageClassName}
                 fetchPriority="high"
                 fill
+                loading="eager"
                 sizes="(min-width: 1200px) 600px, (min-width: 1024px) 58vw, 100vw"
                 src={featured.coverImage}
               />
