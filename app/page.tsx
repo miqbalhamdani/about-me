@@ -19,6 +19,7 @@ export default async function Home() {
     description: siteConfig.description,
     email: `mailto:${siteConfig.email}`,
     url: absoluteUrl("/"),
+    image: absoluteUrl("/profile.jpg"),
     sameAs: getProfileLinks(),
   };
 

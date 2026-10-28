@@ -22,11 +22,11 @@ export function TopNav() {
   return (
     <header className="top-0 z-50 bg-surface-container-lowest border-b border-outline-variant">
       <nav className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-6 max-w-max-width mx-auto">
-        <Link href="/" className="font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary">
+        <Link href="/" className="whitespace-nowrap font-headline-lg-mobile text-headline-lg-mobile font-bold tracking-tighter text-primary">
           {homepageContent.brand}
         </Link>
 
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden xl:flex gap-8 whitespace-nowrap items-center">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -47,13 +47,13 @@ export function TopNav() {
           </a>
         </div>
 
-        <button className="md:hidden text-primary" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+        <button className="xl:hidden text-primary" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
           <MaterialIcon icon={open ? "close" : "menu"} className="text-primary" />
         </button>
       </nav>
 
       {open ? (
-        <div className="md:hidden border-t border-outline-variant px-margin-mobile pb-6 flex flex-col gap-4 bg-surface-container-lowest">
+        <div className="xl:hidden border-t border-outline-variant px-margin-mobile md:px-margin-desktop pb-6 flex flex-col gap-4 bg-surface-container-lowest">
           {navItems.map((item) => (
             <a
               key={`mobile-${item.label}`}
