@@ -32,7 +32,7 @@ const FEATURE_CARD_CONTENT_CLASSES = [
 ] as const;
 
 const FEATURE_CARD_IMAGE_CONTENT_CLASSES = {
-  iconClassName: "text-4xl text-white",
+  iconClassName: "text-2xl text-white",
 } as const;
 
 const FEATURE_CARD_PLACEHOLDERS: FeatureCard[] = [
@@ -82,22 +82,22 @@ export function ProjectFeatures({ featureCards }: ProjectFeaturesProps) {
                 <button
                   key={`${feature.icon}-${index}`}
                   type="button"
-                  className={`${FEATURE_CARD_LAYOUT_CLASSES[index]} group relative overflow-hidden p-10 flex flex-col justify-between text-left cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-low transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl`}
+                  className={`${FEATURE_CARD_LAYOUT_CLASSES[index]} group relative overflow-hidden p-4 flex flex-col justify-between text-left cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-low transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl`}
                   onClick={() => setSelectedImage(feature)}
                 >
                   <Image
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                     loading="eager"
                     src={feature.backgroundImage}
                     fill
                     sizes="(min-width: 768px) 25vw, 100vw"
                   />
-                  <div className="absolute inset-0 bg-black/55 transition-colors duration-500 group-hover:bg-black/35" />
-
                   <div className="relative z-10 flex h-full flex-col justify-between">
-                    <MaterialIcon icon={feature.icon} className={contentClasses.iconClassName} />
+                    <span className="self-start bg-primary/80 p-2">
+                      <MaterialIcon icon={feature.icon} className={contentClasses.iconClassName} />
+                    </span>
                     <span className="sr-only">Open feature image preview</span>
                   </div>
                 </button>

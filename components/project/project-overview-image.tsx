@@ -12,7 +12,7 @@ export function ProjectOverviewImage({ heroAlt, heroImage }: ProjectOverviewImag
         <div className="aspect-[16/10] bg-surface-container border border-outline-variant relative group overflow-hidden">
           <Image
             alt={heroAlt}
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+            className="w-full h-full object-cover"
             fill
             preload
             sizes="(min-width: 1200px) 1200px, 100vw"

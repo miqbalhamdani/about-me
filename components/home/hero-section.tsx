@@ -24,6 +24,14 @@ export function HeroSection() {
               </Fragment>
             ))}
           </h2>
+          <ul className="flex flex-col gap-4">
+            {homepageContent.hero.proof.map((item) => (
+              <li key={item.value} className="border-l-2 border-primary pl-4">
+                <span className="block font-headline-lg text-[20px] font-bold leading-tight">{item.value}</span>
+                <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">{item.label}</span>
+              </li>
+            ))}
+          </ul>
           <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center">
             <a
               className="bg-primary text-on-primary px-10 py-5 font-label-bold text-label-bold uppercase tracking-widest hover:opacity-80 transition-opacity duration-150"

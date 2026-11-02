@@ -3,6 +3,8 @@ import { ExperienceSection } from "@/components/home/experience-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { PortfolioSection } from "@/components/home/portfolio-section";
 import { TechStackSection } from "@/components/home/tech-stack-section";
+import { WritingSection } from "@/components/home/writing-section";
+import { getAllBlogPosts } from "@/lib/blog";
 import { getProjectSummariesInOrder } from "@/lib/projects";
 import { absoluteUrl, getProfileLinks, siteConfig } from "@/lib/site";
 import { homepageContent } from "@/lib/site-content";
@@ -10,7 +12,10 @@ import { homepageContent } from "@/lib/site-content";
 export const revalidate = 86400;
 
 export default async function Home() {
-  const portfolioProjects = await getProjectSummariesInOrder(homepageContent.portfolioOrder);
+  const [portfolioProjects, posts] = await Promise.all([
+    getProjectSummariesInOrder(homepageContent.portfolioOrder),
+    getAllBlogPosts(),
+  ]);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -35,9 +40,10 @@ export default async function Home() {
         <HeroSection />
         <hr className="border-t border-primary w-full" />
         <AboutSection about={homepageContent.about} />
-        <TechStackSection rows={homepageContent.techStackRows} />
-        <ExperienceSection experiences={homepageContent.experiences} />
         <PortfolioSection projects={portfolioProjects} />
+        <ExperienceSection experiences={homepageContent.experiences} />
+        <WritingSection posts={posts.slice(0, 3)} />
+        <TechStackSection rows={homepageContent.techStackRows} />
       </main>
     </>
   );

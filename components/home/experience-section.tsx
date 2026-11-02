@@ -7,7 +7,7 @@ type ExperienceSectionProps = {
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
     <section className="px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto" id="experience">
-      <h2 className="font-headline-lg text-headline-lg mb-section-gap uppercase tracking-tighter">Experience</h2>
+      <h2 className="font-headline-lg text-headline-lg mb-12 uppercase tracking-tighter">Experience</h2>
       <div className="space-y-0">
         {experiences.map((experience) => (
           <article
@@ -19,6 +19,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
                 {experience.company}
               </h3>
               <p className="font-body-md text-secondary">{experience.role}</p>
+              <p className="font-body-md text-on-surface-variant mt-4 max-w-2xl">{experience.description}</p>
             </div>
             <span className="font-label-bold text-label-bold uppercase tracking-widest text-secondary mt-4 md:mt-0">
               {experience.period}

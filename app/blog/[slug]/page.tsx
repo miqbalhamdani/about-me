@@ -12,6 +12,7 @@ import {
   renderMarkdown,
 } from "@/lib/blog";
 import { absoluteUrl, siteConfig } from "@/lib/site";
+import { homepageContent } from "@/lib/site-content";
 
 export const revalidate = 86400;
 
@@ -172,6 +173,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </aside>
       </div>
+
+      <aside className="mt-section-gap flex flex-col md:flex-row md:items-center justify-between gap-8 bg-primary text-on-primary p-8 md:p-12">
+        <div className="max-w-2xl">
+          <p className="mb-2 font-label-bold text-label-bold uppercase tracking-widest text-inverse-primary">Written by {siteConfig.name}</p>
+          <p className="font-headline-lg-mobile text-headline-lg-mobile leading-tight">
+            Senior frontend engineer, open to new roles. See what I build with these ideas.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-6 shrink-0">
+          <Link
+            className="bg-on-primary text-primary px-8 py-4 font-label-bold text-label-bold uppercase tracking-widest hover:opacity-80 transition-opacity"
+            href="/#portfolio"
+          >
+            View Portfolio
+          </Link>
+          <a
+            className="px-8 py-4 border border-on-primary font-label-bold text-label-bold uppercase tracking-widest hover:bg-on-primary hover:text-primary transition-colors"
+            href={homepageContent.hero.contact.href}
+          >
+            Contact Me
+          </a>
+        </div>
+      </aside>
 
       <section className="mt-section-gap border-t border-outline-variant pt-16">
         <h2 className="mb-12 font-headline-lg-mobile text-headline-lg-mobile text-primary md:font-headline-lg md:text-headline-lg">

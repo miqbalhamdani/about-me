@@ -28,6 +28,7 @@ export type Experience = {
   company: string;
   role: string;
   period: string;
+  description: string;
 };
 
 export type FooterContent = {
@@ -45,6 +46,7 @@ export type HrefOnly = {
 export type HeroContent = {
   h1: string[];
   h2: string[];
+  proof: AboutHighlight[];
   contact: HrefOnly;
 };
 

@@ -8,10 +8,10 @@ import type { NavItem } from "@/lib/content-types";
 
 const navItems: NavItem[] = [
   { href: "/#about", label: "About" },
-  { href: "/#stack", label: "Tech Stack" },
-  { href: "/#experience", label: "Experience" },
   { href: "/#portfolio", label: "Portfolio" },
+  { href: "/#experience", label: "Experience" },
   { href: "/blog", label: "Blog" },
+  { href: "/#stack", label: "Tech Stack" },
 ];
 
 const NAV_CTA_LABEL = "Download CV";

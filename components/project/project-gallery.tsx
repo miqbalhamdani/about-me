@@ -27,7 +27,7 @@ export function ProjectGallery({ galleryImages }: ProjectGalleryProps) {
               >
                 <Image
                   alt={image.alt}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
                   src={image.src}
@@ -43,7 +43,7 @@ export function ProjectGallery({ galleryImages }: ProjectGalleryProps) {
             >
               <Image
                 alt={featuredWideImage.alt}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover"
                 fill
                 sizes="(min-width: 1200px) 1200px, 100vw"
                 src={featuredWideImage.src}

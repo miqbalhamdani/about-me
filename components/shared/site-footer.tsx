@@ -11,6 +11,17 @@ export function SiteFooter() {
           <p className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
             {FOOTER_COPYRIGHT}
           </p>
+          <p className="font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+            Built with Next.js ·{" "}
+            <a
+              className="text-primary hover:underline"
+              href="https://github.com/miqbalhamdani/about-me"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source on GitHub
+            </a>
+          </p>
         </div>
         <div className="flex flex-wrap justify-center gap-8">
           {homepageContent.footer.links.map((link) => (
