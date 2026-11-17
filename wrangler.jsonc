@@ -1,0 +1,9 @@
+{
+  "name": "iqbalhamdani-com",
+  "compatibility_date": "2025-09-01",
+  "assets": { "directory": "./out", "not_found_handling": "404-page" },
+  "routes": [
+    { "pattern": "www.iqbalhamdani.com", "custom_domain": true },
+    { "pattern": "iqbalhamdani.com", "custom_domain": true }
+  ]
+}
